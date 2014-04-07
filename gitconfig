@@ -1,0 +1,33 @@
+[core]
+	editor = subl -w
+	excludesfile = ~/.gitignore
+[alias]
+	st = status
+	di = diff
+	co = checkout
+	ci = commit
+	br = branch
+	sta = stash
+	llog = log --date=local
+ dlc = diff --cached HEAD^
+ review = log -p --reverse -M -C -C --patience --no-prefix
+ ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+ lg = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order
+[apply]
+	whitespace = nowarn
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+[branch]
+	autosetupmerge = true
+[user]
+	name = Fred Oliveira
+	email = fred@helloform.com
+[push]
+	default = simple
+
+[hub]
+protocol = https
