@@ -1,0 +1,8 @@
+# Source Prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Recommended by brew doctor
+export PATH="/usr/local/bin:$HOME/.bin:$PATH"
+eval "$(rbenv init - zsh --no-rehash)"
