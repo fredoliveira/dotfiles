@@ -56,7 +56,8 @@ set tm=500
 colorscheme itg_flat
 
 " vim-airline theme
-let g:airline_theme='jellybeans'
+let g:airline_theme = 'jellybeans'
+let g:airline_powerline_fonts = 1
 
 set background=dark
 set encoding=utf8
