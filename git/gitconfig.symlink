@@ -1,5 +1,5 @@
 [core]
-	editor = subl -w
+	editor = vim
 	excludesfile = ~/.gitignore
 [alias]
 	st = status
@@ -8,6 +8,7 @@
 	ci = commit
 	br = branch
 	sta = stash
+  gud = push --force
 	llog = log --date=local
  dlc = diff --cached HEAD^
  review = log -p --reverse -M -C -C --patience --no-prefix
@@ -31,3 +32,7 @@
 
 [hub]
 protocol = https
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
