@@ -1,0 +1,135 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+set history=1000
+set undolevels=1000
+
+" Set the terminal title at will
+set title
+
+" Automatically update files when they've been changed externally
+set autoread
+
+" A better leader key
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" 7 Lines to the cursor
+set so=10
+
+" Always show where I am in a buffer
+set ruler
+
+" Height of the command bar
+set cmdheight=1
+
+" Hide a buffer when it is abandoned
+set hid
+
+if has('mouse')
+	set mouse=a
+endif
+
+" Ignore case when searching
+set ignorecase
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Show matching brackets
+set showmatch
+set mat=2
+
+" No sounds on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Colors, fonts
+" colorscheme desert
+colorscheme itg_flat
+
+" vim-airline theme
+let g:airline_theme='jellybeans'
+
+set background=dark
+set encoding=utf8
+
+" Why use vim backup when git exists
+set nobackup
+set nowb
+set noswapfile
+
+" Tabs and indentation
+
+" Use spaces, because tabs are evil
+set expandtab
+
+set smarttab
+
+" 1 tab = 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+" line break on excessive lines
+set lbr
+set tw=500
+
+" Auto indent
+" set ai
+" set si
+" set wrap
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <Space> /
+map <c-space> ?
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Tab management
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext 
+
+
+" Highlight when searching
+
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
+
+" Quickly open a buffer for scribble notes
+map <leader>q :e ~/buffer<cr>
+
+" Quickly open a markdown buffer for scribble
+map <leader>x :e ~/buffer.md<cr>
+
+" Toggle paste on and off
+map <leader>pp :setlocal paste!<cr>
+
+" Always show the status line
+set laststatus=2
+
+" Relative line numbers
+set relativenumber
+
