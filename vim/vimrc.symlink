@@ -134,3 +134,5 @@ set laststatus=2
 " Relative line numbers
 set relativenumber
 
+" NERDTree mappings
+map <C-n> :NERDTreeToggle<CR>
