@@ -8,4 +8,10 @@ export PATH="/usr/local/bin:$HOME/.bin:$PATH"
 eval "$(rbenv init - zsh --no-rehash)"
 
 # Setup boot2docker env variables
-eval `boot2docker shellinit 2>/dev/null`
+eval "$(boot2docker shellinit 2>/dev/null)"
+
+# Aliases
+alias d='docker-compose run web'
+
+# Aliases with arguments require a method definition
+t () { livestreamer http://twitch.tv/$* best }

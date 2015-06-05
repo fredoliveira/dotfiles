@@ -30,6 +30,7 @@ set cmdheight=1
 " Hide a buffer when it is abandoned
 set hid
 
+" Mouse support
 if has('mouse')
 	set mouse=a
 endif
@@ -56,7 +57,7 @@ set tm=500
 colorscheme itg_flat
 
 " vim-airline theme
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 
 set background=dark
@@ -134,5 +135,10 @@ set laststatus=2
 " Relative line numbers
 set relativenumber
 
-" NERDTree mappings
+" Plugin mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-t> :CommandT<CR>
+
+" Commit messages should always wrap at 72 chars
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
