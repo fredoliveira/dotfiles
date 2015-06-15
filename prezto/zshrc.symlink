@@ -15,3 +15,6 @@ alias d='docker-compose run web'
 
 # Aliases with arguments require a method definition
 t () { livestreamer http://twitch.tv/$* best }
+
+# Use macvim as the default editor
+export EDITOR="/usr/local/bin/mvim"
