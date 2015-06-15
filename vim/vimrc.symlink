@@ -53,8 +53,8 @@ set t_vb=
 set tm=500
 
 " Colors, fonts
-" colorscheme desert
-colorscheme itg_flat
+" colorscheme itg_flat
+colorscheme jellybeans
 
 " vim-airline theme
 let g:airline_theme = 'powerlineish'
@@ -141,4 +141,3 @@ map <C-t> :CommandT<CR>
 
 " Commit messages should always wrap at 72 chars
 autocmd Filetype gitcommit setlocal spell textwidth=72
-
