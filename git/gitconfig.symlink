@@ -8,12 +8,11 @@
 	ci = commit
 	br = branch
 	sta = stash
-  gud = push --force
-	llog = log --date=local
- dlc = diff --cached HEAD^
- review = log -p --reverse -M -C -C --patience --no-prefix
- ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
- lg = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order
+  cp = cherry-pick
+  dlc = diff --cached HEAD^
+  review = log -p --reverse -M -C -C --patience --no-prefix
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  g = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 [apply]
 	whitespace = nowarn
 [color]
@@ -31,7 +30,7 @@
 	default = simple
 
 [hub]
-protocol = https
+  protocol = https
 [filter "media"]
 	required = true
 	clean = git media clean %f
