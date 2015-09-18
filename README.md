@@ -22,3 +22,11 @@ git clone git@github.com:fredoliveira/dotfiles.git ~/.dotfiles
 script/bootstrap
 ```
 
+Don't forget to compile Command-T in order to use it in vim/macvim:
+
+```
+cd ~/.dotfiles/vim/vim.symlink/bundle/command-t/ruby/command-t
+/usr/bin/ruby extconf.rb && make
+```
+
+That's all there is to it!
