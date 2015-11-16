@@ -9,3 +9,6 @@ eval "$(rbenv init - zsh --no-rehash)"
 
 # Use macvim as the default editor
 export EDITOR="/usr/local/bin/mvim"
+
+# Use aliases
+source $HOME/.aliases

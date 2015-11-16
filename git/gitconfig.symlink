@@ -11,8 +11,6 @@
   cp = cherry-pick
   dlc = diff --cached HEAD^
   review = log -p --reverse -M -C -C --patience --no-prefix
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  g = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 [apply]
 	whitespace = nowarn
 [color]
