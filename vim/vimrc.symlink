@@ -1,7 +1,26 @@
-execute pathogen#infect()
+" Vundle setup starts here
+set nocompatible
+filetype off
 syntax on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'wincent/Command-T'
+Plugin 'scrooloose/nerdtree'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'mileszs/ack.vim'
+
+call vundle#end()
 filetype plugin indent on
 
+" Regular vim configuration starts here
 set history=1000
 set undolevels=1000
 
@@ -53,7 +72,6 @@ set t_vb=
 set tm=500
 
 " Colors, fonts
-" colorscheme itg_flat
 colorscheme jellybeans
 
 " vim-airline theme
