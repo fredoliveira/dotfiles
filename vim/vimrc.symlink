@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdtree'
@@ -33,6 +34,9 @@ set autoread
 " A better leader key
 let mapleader = ","
 let g:mapleader = ","
+
+" Backspace
+set backspace=2
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -72,10 +76,10 @@ set t_vb=
 set tm=500
 
 " Colors, fonts
-colorscheme jellybeans
+colorscheme Tomorrow-Night-Bright
 
 " vim-airline theme
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 
 set background=dark

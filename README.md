@@ -8,10 +8,10 @@ Feel free to inspect the `bootstrap` bash file before you run it. What it does i
 ### What is included
 
 * Zsh configuration
-* Prezto for Zsh configuration
+* Oh-my-zsh for zsh plugins / theme
 * Vim setup with Nerdtree, Command+T, vim-sensible and vim-airline
 * My personal gitconfig and gitignore
-
+* My tmux configuration
 
 ### Installation process
 
