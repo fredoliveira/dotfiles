@@ -1,0 +1,30 @@
+# Navigation shortcuts
+alias d="cd ~/Documents/Dropbox"
+alias p="cd ~/Projects"
+alias dl="cd ~/Downloads"
+
+# Command shortcuts
+alias g="git"
+alias h="history"
+alias l="ls -lF -G"
+alias la="ls -laF -G"
+
+# Livestreamer-specific functions
+function tw() {
+  livestreamer http://twitch.tv/$1 best
+}
+
+# IP Addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
