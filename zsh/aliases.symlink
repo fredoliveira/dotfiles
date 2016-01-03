@@ -6,6 +6,7 @@ alias dot="cd ~/.dotfiles"
 
 # Command shortcuts
 alias g="git"
+alias gt="gittower"
 alias h="history"
 alias l="ls -lF -G"
 alias la="ls -laF -G"
