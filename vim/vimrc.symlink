@@ -14,7 +14,6 @@ Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'slim-template/vim-slim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 
@@ -124,8 +123,8 @@ map <C-l> <C-W>l
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 
 " Highlight when searching
@@ -163,3 +162,4 @@ map <C-t> :CommandT<CR>
 
 " Commit messages should always wrap at 72 chars
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
