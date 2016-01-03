@@ -20,6 +20,3 @@ fi
 # Source the aliases file
 source $HOME/.aliases
 
-# Load-up the docker env variables
-eval "$(docker-machine env default)"
-
