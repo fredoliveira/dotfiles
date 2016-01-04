@@ -17,6 +17,9 @@ else
   export EDITOR='mvim'
 fi
 
+# Load-up rbenv if it is installed
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Source the aliases file
 source $HOME/.aliases
 
