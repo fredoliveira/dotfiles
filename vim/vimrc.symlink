@@ -1,7 +1,6 @@
 " Vundle setup starts here
 set nocompatible
 filetype off
-syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,8 +15,11 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
+
+syntax on
 filetype plugin indent on
 
 " Regular vim configuration starts here
