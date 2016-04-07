@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
@@ -16,6 +17,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'wfleming/vim-codeclimate'
 
 call vundle#end()
 
@@ -164,4 +166,7 @@ map <C-t> :CommandT<CR>
 
 " Commit messages should always wrap at 72 chars
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" EditorConfig options to deal with fugitive support
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
