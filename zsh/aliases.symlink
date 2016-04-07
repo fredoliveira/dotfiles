@@ -6,6 +6,7 @@ alias dot="cd ~/.dotfiles"
 
 # Command shortcuts
 alias g="git"
+alias gp="git pull --rebase"
 alias gt="gittower"
 alias h="history"
 alias l="ls -lF -G"
@@ -14,7 +15,12 @@ alias r="rails"
 
 # Livestreamer-specific functions
 function tw() {
-  livestreamer http://twitch.tv/$1 best
+  if [ "$2" != "" ]
+  then
+    livestreamer http://twitch.tv/$1 $2
+  else
+    livestreamer http://twitch.tv/$1 best
+  fi
 }
 
 # IP Addresses
