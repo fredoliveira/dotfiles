@@ -3,7 +3,7 @@ export ZSH=/Users/fred/.oh-my-zsh
 
 ZSH_THEME="sorin"
 
-plugins=(git rails osx tmux zsh-syntax-highlighting history-substring-search docker)
+plugins=(git rails osx zsh-syntax-highlighting history-substring-search)
 export PATH="/usr/local/var/rbenv/shims:/usr/local/bin:/Users/fred/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
@@ -22,6 +22,3 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Source the aliases file
 source $HOME/.aliases
-
-# Setup docker
-eval `docker-machine env 2>/dev/null`
