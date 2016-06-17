@@ -82,7 +82,7 @@ set tm=500
 colorscheme Tomorrow-Night-Bright
 
 " vim-airline theme
-let g:airline_theme = 'jellybeans'
+" let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 
 set background=dark
@@ -169,4 +169,3 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " EditorConfig options to deal with fugitive support
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
