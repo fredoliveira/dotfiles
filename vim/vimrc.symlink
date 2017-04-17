@@ -25,6 +25,7 @@ Plug 'slim-template/vim-slim'
 " Interface
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim'
 Plug 'ajh17/Spacegray.vim'
 
 call plug#end()
@@ -89,7 +90,7 @@ set tm=500
 
 " Colors, fonts
 set background=dark
-colorscheme spacegray
+colorscheme jellybeans
 
 if (has("termguicolors"))
   set termguicolors
@@ -137,6 +138,7 @@ set laststatus=2
 " Plugin mappings
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
+map <C-t> :Files<CR>
 
 " Commit messages should always wrap at 72 chars
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -145,11 +147,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Vim-airline configuration
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='hybrid'
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
+let g:airline_theme='jellybeans'
 
 " FZF configuration
 let g:fzf_action = {
@@ -157,8 +156,6 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
