@@ -17,6 +17,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Better search via Ack
+Plug 'mileszs/ack.vim'
+
 " Language-specific support
 Plug 'tpope/vim-rails'
 Plug 'kchmck/vim-coffee-script'
@@ -96,6 +99,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+set t_ut=
+
 " Why use vim backup when git exists
 set nobackup
 set nowb
@@ -137,7 +142,6 @@ set laststatus=2
 
 " Plugin mappings
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
 map <C-t> :Files<CR>
 
 " Commit messages should always wrap at 72 chars
@@ -170,3 +174,4 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
