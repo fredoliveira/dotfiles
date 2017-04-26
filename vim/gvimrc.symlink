@@ -1,7 +1,7 @@
 " Macvim-specific options
 
 " Editor font family
-set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h11
+set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
 
 " Remove srollbars
 set guioptions-=r
