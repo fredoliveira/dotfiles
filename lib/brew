@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+readonly DOTFILES_DIRECTORY="${HOME}/.dotfiles"
+source ${DOTFILES_DIRECTORY}/lib/utils
+
+# update homebrew, upgrade installed packages
+user "updating homebrew"
+brew update
+
+user "upgrading installed packages"
+brew upgrade
+
+# base packages
+user "installing shell stuff (fish, tmux, fzf, wget)"
+brew install fish
+brew install tmux
+brew install fzf
+brew install wget
+
+# editors
+user "installing vim and neovim"
+brew install vim
+brew install neovim
+
+# git and git-flow
+user "installing git"
+brew install git
+brew install git-flow
+
+# ruby
+user "installing ruby"
+brew install rbenv
+brew install ruby-build
+
+user "installing ansible"
+brew install ansible
+
+# node, yarn
+user "installing node"
+brew install node
+brew install yarn
+
+# cleanup
+user "cleaning up"
+brew cleanup
+
+user "running brew doctor"
+brew doctor
+
+success "all done!"

@@ -78,6 +78,7 @@ main() {
 
   # Source the utilities file (see lib/utils)
   source ${DOTFILES_DIRECTORY}/lib/utils
+  source ${DOTFILES_DIRECTORY}/lib/brew
 
   # Make sure dependencies are in place
   init
