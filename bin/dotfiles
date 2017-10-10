@@ -47,6 +47,14 @@ init() {
     success "fisherman is installed"
   fi
 
+  # Hulk for fish
+  if [[ ! -f $HOME/.config/fisherman/hulk/fish_prompt.fish ]]; then
+    info "installing hulk"
+    fisher hulk
+  else
+    success "hulk is installed"
+  fi
+
   RETVAL="0"
 }
 
