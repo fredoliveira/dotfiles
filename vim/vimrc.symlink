@@ -7,7 +7,11 @@ call plug#begin()
 
 " Utilities
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-sensible'
+
+if !has('nvim')
+  Plug 'tpope/vim-sensible'
+endif
+
 Plug 'editorconfig/editorconfig-vim'
 
 " Git support
@@ -177,15 +181,4 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-" Neocomplete configuration
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-" Complete with TAB, closewith backspaceand spacebar
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
