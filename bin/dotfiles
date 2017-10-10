@@ -32,6 +32,7 @@ init() {
   # Fish
   if ! type_exists "fish"; then
     info "making fish your default shell"
+    brew install fish
     chsh -s /usr/local/bin/fish
   else
     success "fish shell is installed"
@@ -49,6 +50,17 @@ init() {
   RETVAL="0"
 }
 
+link () {
+  info 'linking dotfiles'
+  local overwrite_all=false backup_all=false skip_all=false
+
+  for src in $(find -H "$DOTFILES_DIRECTORY" -maxdepth 3 -name '*.symlink')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+}
+
 main() {
   # Check for Dotfile
   if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
@@ -59,6 +71,7 @@ main() {
   source ${DOTFILES_DIRECTORY}/lib/utils
 
   init
+  link
 
   exit $RETVAL
 }
