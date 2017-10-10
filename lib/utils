@@ -34,7 +34,7 @@ link_file () {
       then
         skip=true;
       else
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        user "File exists: $dst ($(basename "$src")). What do you want to do?\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
@@ -79,7 +79,7 @@ link_file () {
     fi
   fi
 
-  if [ "$skip" != "true" ]  # "false" or empty
+  if [ "$skip" != "true" ] # "false" or empty
   then
     ln -s "$1" "$2"
     success "linked $1 to $2"

@@ -70,15 +70,19 @@ link () {
 }
 
 main() {
-  # Check for Dotfile
+  # Are we somehow not in the right place?
   if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     info "cloning dotfiles into ${DOTFILES_DIRECTORY}"
     git clone --depth=1 https://github.com/fredoliveira/dotfiles.git ${DOTFILES_DIRECTORY}
   fi
 
+  # Source the utilities file (see lib/utils)
   source ${DOTFILES_DIRECTORY}/lib/utils
 
+  # Make sure dependencies are in place
   init
+
+  # Link the actual dotfiles
   link
 
   exit $RETVAL
