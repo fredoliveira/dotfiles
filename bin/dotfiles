@@ -1,0 +1,66 @@
+#!/bin/bash
+
+readonly DOTFILES_DIRECTORY="${HOME}/.dotfiles"
+RETVAL="0"
+
+init() {
+  # Xcode
+  if ! type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
+    info "running xcode-select"
+    xcode-select --install
+  else
+    success "xcode is installed"
+  fi
+
+  # SSH
+  if [[ ! -d $HOME/.ssh ]]; then
+    info "creating ${HOME}/.ssh directory"
+    mkdir $HOME/.ssh
+    chmod 700 $HOME/.ssh
+  else
+    success "ssh directory is created"
+  fi
+
+  # Homebrew
+  if ! type_exists "brew"; then
+    info "installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    success "homebrew is installed"
+  fi
+
+  # Fish
+  if ! type_exists "fish"; then
+    info "making fish your default shell"
+    chsh -s /usr/local/bin/fish
+  else
+    success "fish shell is installed"
+  fi
+
+  # Fisherman
+  if [[ ! -f $HOME/.config/fish/functions/fisher.fish ]]; then
+    info "installing fisherman"
+    curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+    fisher
+  else
+    success "fisherman is installed"
+  fi
+
+  RETVAL="0"
+}
+
+main() {
+  # Check for Dotfile
+  if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
+    info "cloning dotfiles into ${DOTFILES_DIRECTORY}"
+    git clone --depth=1 https://github.com/fredoliveira/dotfiles.git ${DOTFILES_DIRECTORY}
+  fi
+
+  source ${DOTFILES_DIRECTORY}/lib/utils
+
+  init
+
+  exit $RETVAL
+}
+
+main "$@"
