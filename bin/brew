@@ -36,12 +36,12 @@ user "installing ansible"
 brew install ansible
 
 # node, yarn
-user "installing node"
+user "installing node and yarn"
 brew install node
 brew install yarn
 
 # cleanup
-user "cleaning up"
+user "cleaning up homebrew"
 brew cleanup
 
 user "running brew doctor"

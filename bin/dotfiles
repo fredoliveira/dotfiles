@@ -59,7 +59,7 @@ init() {
 }
 
 link () {
-  info 'linking dotfiles'
+  info "linking dotfiles"
   local overwrite_all=false backup_all=false skip_all=false
 
   for src in $(find -H "$DOTFILES_DIRECTORY" -maxdepth 3 -name '*.symlink')
@@ -76,9 +76,9 @@ main() {
     git clone --depth=1 https://github.com/fredoliveira/dotfiles.git ${DOTFILES_DIRECTORY}
   fi
 
-  # Source the utilities file (see lib/utils)
-  source ${DOTFILES_DIRECTORY}/lib/utils
-  source ${DOTFILES_DIRECTORY}/lib/brew
+  # Source the utilities file (see bin/utils)
+  source ${DOTFILES_DIRECTORY}/bin/utils
+  source ${DOTFILES_DIRECTORY}/bin/brew
 
   # Make sure dependencies are in place
   init
@@ -86,6 +86,7 @@ main() {
   # Link the actual dotfiles
   link
 
+  # Return with the current return value
   exit $RETVAL
 }
 
