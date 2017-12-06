@@ -13,6 +13,8 @@ case, go all out and run `bin/dotfiles`.
 * Ack configuration
 * Fish shell setup
 
+(Go through `bin/brew` to see and tweak which homebrew packages are installed.)
+
 ### Installation process
 
 Here's the quick and dirty setup process:

@@ -69,6 +69,14 @@ link () {
   done
 }
 
+fish_setup() {
+  # Create the fish config directory if it doesn't exist yet
+  mkdir -p ~/.config/fish/
+
+  # Link config.fish
+  link_file "$DOTFILES_DIRECTORY/configs/fish/config.fish" "$HOME/.config/fish/config.fish"
+}
+
 main() {
   # Are we somehow not in the right place?
   if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
@@ -85,6 +93,11 @@ main() {
 
   # Link the actual dotfiles
   link
+
+  # Setup the fish configuration file. Normally it would be covered by the link function
+  # above, but because its configuration lives in `.config/fish`` rather than something like
+  # `.fish`, this is a little better.
+  fish_setup
 
   # Return with the current return value
   exit $RETVAL
