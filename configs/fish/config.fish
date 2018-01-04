@@ -1,6 +1,5 @@
 # Path setup
 set PATH $HOME/.bin $PATH
-set PATH /usr/local/opt/node@6/bin $PATH
 
 # Editor
 set -gx EDITOR vim

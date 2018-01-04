@@ -19,9 +19,8 @@ brew install the_silver_searcher
 brew install wget
 
 # editors
-user "installing vim and neovim"
+user "installing vim"
 brew install vim
-brew install neovim
 
 # git and git-flow
 user "installing git"
@@ -39,6 +38,16 @@ brew install ansible
 user "installing node and yarn"
 brew install node
 brew install yarn
+
+# casks
+user "installing iterm2"
+brew cask install iterm2
+user "installing visual studio code"
+brew cask install visual-studio-code
+user "installing fantastical"
+brew cask install fantastical
+user "installing spotify"
+brew cask install spotify
 
 # cleanup
 user "cleaning up homebrew"
