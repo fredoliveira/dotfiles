@@ -12,6 +12,14 @@ init() {
     success "xcode is installed"
   fi
 
+  # Home binaries folder
+  if [[ ! -d $HOME/.bin ]]; then
+    info "creating ${HOME}/.bin directory"
+    mkdir $HOME/.ssh
+  else
+    success ".bin is created"
+  fi
+
   # SSH
   if [[ ! -d $HOME/.ssh ]]; then
     info "creating ${HOME}/.ssh directory"
@@ -86,10 +94,12 @@ main() {
 
   # Source the utilities file (see bin/utils)
   source ${DOTFILES_DIRECTORY}/bin/utils
-  source ${DOTFILES_DIRECTORY}/bin/brew
 
   # Make sure dependencies are in place
   init
+
+  # Install homebrew packages
+  source ${DOTFILES_DIRECTORY}/bin/brew
 
   # Link the actual dotfiles
   link
