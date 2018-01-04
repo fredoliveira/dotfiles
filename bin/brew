@@ -48,12 +48,19 @@ user "installing fantastical"
 brew cask install fantastical
 user "installing spotify"
 brew cask install spotify
+user "installing dropbox"
+brew cask install dropbox
+user "installing slack"
+brew cask install slack
+user "installing omnifocus"
+brew cask install omnifocus
+user "installing dash"
+brew cask install dash
+user "installing transmit"
+brew cask install transmit
 
 # cleanup
 user "cleaning up homebrew"
 brew cleanup
-
-user "running brew doctor"
-brew doctor
 
 success "all done!"
