@@ -39,6 +39,9 @@ user "installing node and yarn"
 brew install node
 brew install yarn
 
+# PGP
+brew install pgp
+
 # casks
 user "installing iterm2"
 brew cask install iterm2
