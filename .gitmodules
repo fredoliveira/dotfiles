@@ -1,9 +1,6 @@
-[submodule "zsh/z"]
-	path = zsh/z
+[submodule "configs/zsh/z"]
+	path = configs/zsh/z
 	url = https://github.com/rupa/z.git
-[submodule "configs/zsh/omz"]
-	path = configs/zsh/omz
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "configs/zsh/omz.symlink"]
 	path = configs/zsh/omz.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
