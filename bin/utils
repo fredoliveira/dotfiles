@@ -12,6 +12,10 @@ success() {
   printf "$(tput setaf 64)✓ %s$(tput sgr0)\n" "$@"
 }
 
+separator() {
+  printf "\n" "$@"
+}
+
 type_exists() {
   if type $1 > /dev/null 2>&1; then
     return 0
@@ -84,4 +88,16 @@ link_file () {
     ln -s "$1" "$2"
     success "linked $1 to $2"
   fi
+}
+
+link () {
+  separator
+  info "linking dotfiles:"
+  local overwrite_all=false backup_all=false skip_all=false
+
+  for src in $(find -H "$1" -maxdepth 3 -name '*.symlink')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
 }

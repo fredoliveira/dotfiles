@@ -1,5 +1,6 @@
 # Path setup
 set PATH $HOME/.bin $PATH
+set GOPATH $HOME/code/go
 
 # Editor
 set -gx EDITOR vim
@@ -12,3 +13,4 @@ set -x LANG en_US.UTF-8
 if test -e ~/.env
   source ~/.env
 end
+set -g fish_user_paths "/usr/local/opt/imagemagick@6/bin" $fish_user_paths

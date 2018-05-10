@@ -4,6 +4,9 @@ readonly DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 RETVAL="0"
 
 init() {
+  separator
+  info "checking basic dependencies:"
+
   # Xcode
   if ! type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
     info "running xcode-select"
@@ -15,9 +18,9 @@ init() {
   # Home binaries folder
   if [[ ! -d $HOME/.bin ]]; then
     info "creating ${HOME}/.bin directory"
-    mkdir $HOME/.ssh
+    mkdir $HOME/.bin
   else
-    success ".bin is created"
+    success "home binaries folder (~/.bin) is created"
   fi
 
   # SSH
@@ -26,7 +29,7 @@ init() {
     mkdir $HOME/.ssh
     chmod 700 $HOME/.ssh
   else
-    success "ssh directory is created"
+    success "ssh directory (~/.ssh) is created"
   fi
 
   # Homebrew
@@ -37,52 +40,7 @@ init() {
     success "homebrew is installed"
   fi
 
-  # Fish
-  if ! type_exists "fish"; then
-    info "making fish your default shell"
-    brew install fish
-    chsh -s /usr/local/bin/fish
-  else
-    success "fish shell is installed"
-  fi
-
-  # Fisherman
-  if [[ ! -f $HOME/.config/fish/functions/fisher.fish ]]; then
-    info "installing fisherman"
-    curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-    fisher
-  else
-    success "fisherman is installed"
-  fi
-
-  # Simple for fish
-  if [[ ! -f $HOME/.config/fisherman/simple/fishfile ]]; then
-    info "installing simple"
-    fisher simple
-  else
-    success "simple is installed"
-  fi
-
   RETVAL="0"
-}
-
-link () {
-  info "linking dotfiles"
-  local overwrite_all=false backup_all=false skip_all=false
-
-  for src in $(find -H "$DOTFILES_DIRECTORY" -maxdepth 3 -name '*.symlink')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
-  done
-}
-
-fish_setup() {
-  # Create the fish config directory if it doesn't exist yet
-  mkdir -p ~/.config/fish/
-
-  # Link config.fish
-  link_file "$DOTFILES_DIRECTORY/configs/fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
 main() {
@@ -95,19 +53,14 @@ main() {
   # Source the utilities file (see bin/utils)
   source ${DOTFILES_DIRECTORY}/bin/utils
 
-  # Make sure dependencies are in place
+  # Make sure basic dependencies (xcode, homebrew) are in place
   init
 
   # Install homebrew packages
-  source ${DOTFILES_DIRECTORY}/bin/brew
+  # source ${DOTFILES_DIRECTORY}/bin/brew
 
   # Link the actual dotfiles
-  link
-
-  # Setup the fish configuration file. Normally it would be covered by the link function
-  # above, but because its configuration lives in `.config/fish`` rather than something like
-  # `.fish`, this is a little better.
-  fish_setup
+  link ${DOTFILES_DIRECTORY}
 
   # Return with the current return value
   exit $RETVAL
