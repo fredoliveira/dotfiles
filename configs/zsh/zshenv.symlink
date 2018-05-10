@@ -1,5 +1,8 @@
-# If you come from bash you might have to change your $PATH.
+# Setup path
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 
 # Load z
 . ~/.dotfiles/configs/zsh/z/z.sh
+
+# Source a local .env file if it exists
+source ~/.env
