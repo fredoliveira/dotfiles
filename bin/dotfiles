@@ -57,7 +57,7 @@ main() {
   init
 
   # Install homebrew packages
-  # source ${DOTFILES_DIRECTORY}/bin/brew
+  source ${DOTFILES_DIRECTORY}/bin/brew
 
   # Link the actual dotfiles
   link ${DOTFILES_DIRECTORY}
