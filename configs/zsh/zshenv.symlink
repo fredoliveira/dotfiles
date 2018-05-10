@@ -5,4 +5,4 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 . ~/.dotfiles/configs/zsh/z/z.sh
 
 # Source a local .env file if it exists
-source ~/.env
+[ -f ~/.env ] && source ~/.env
