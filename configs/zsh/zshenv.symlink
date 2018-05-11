@@ -6,3 +6,6 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 
 # Source a local .env file if it exists
 [ -f ~/.env ] && source ~/.env
+
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
