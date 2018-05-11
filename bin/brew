@@ -3,7 +3,6 @@
 source ${DOTFILES_DIRECTORY}/bin/utils
 
 # update homebrew, upgrade installed packages
-separator
 user "updating homebrew"
 brew update
 

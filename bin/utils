@@ -8,6 +8,10 @@ user () {
   printf "$(tput setaf 5)∞ %s$(tput sgr0)\n" "$@"
 }
 
+prompt () {
+  printf "$(tput setaf 6)? %s$(tput sgr0)\n" "$@"
+}
+
 success() {
   printf "$(tput setaf 64)✓ %s$(tput sgr0)\n" "$@"
 }

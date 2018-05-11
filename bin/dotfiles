@@ -60,6 +60,19 @@ zsh() {
   fi
 }
 
+homebrew () {
+  separator
+  info "package installation"
+
+  prompt "want to install homebrew packages? press 'y' to proceed and anything else to skip."
+  read -n 1 -r -s
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    source ${DOTFILES_DIRECTORY}/bin/brew
+  else
+    success "skipped homebrew package installation"
+  fi
+}
+
 main() {
   # Are we somehow not in the right place?
   if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
@@ -74,7 +87,7 @@ main() {
   init
 
   # Install homebrew packages
-  source ${DOTFILES_DIRECTORY}/bin/brew
+  homebrew
 
   # Setup zsh as the shell
   zsh
