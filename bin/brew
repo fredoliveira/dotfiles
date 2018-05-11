@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-readonly DOTFILES_DIRECTORY="${HOME}/.dotfiles"
-source ${DOTFILES_DIRECTORY}/lib/utils
+source ${DOTFILES_DIRECTORY}/bin/utils
 
 # update homebrew, upgrade installed packages
+separator
 user "updating homebrew"
 brew update
-
-user "upgrading installed packages"
-brew upgrade
 
 # base packages
 user "installing shell stuff (zsh, tmux, fzf, wget)"
@@ -40,6 +37,7 @@ brew install node
 brew install yarn
 
 # PGP
+user "installing pgp"
 brew install pgp
 
 # casks
