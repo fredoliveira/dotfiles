@@ -20,7 +20,7 @@ init() {
     info "creating ${HOME}/.bin directory"
     mkdir $HOME/.bin
   else
-    success "home binaries folder (~/.bin) is created"
+    success "home binaries folder (~/.bin) exists"
   fi
 
   # SSH
@@ -29,7 +29,7 @@ init() {
     mkdir $HOME/.ssh
     chmod 700 $HOME/.ssh
   else
-    success "ssh directory (~/.ssh) is created"
+    success "ssh directory (~/.ssh) exists"
   fi
 
   # Homebrew
@@ -41,6 +41,23 @@ init() {
   fi
 
   RETVAL="0"
+}
+
+zsh() {
+  separator
+  info "configuring zsh"
+
+  TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
+  if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
+    if hash chsh >/dev/null 2>&1; then
+      user "changing shell to zsh"
+      chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    else
+      user "system does not include chsh. Please change your shell to zsh manually."
+    fi
+  else
+    success "shell is already zsh. Skipping zsh setup."
+  fi
 }
 
 main() {
@@ -57,7 +74,10 @@ main() {
   init
 
   # Install homebrew packages
-  # source ${DOTFILES_DIRECTORY}/bin/brew
+  source ${DOTFILES_DIRECTORY}/bin/brew
+
+  # Setup zsh as the shell
+  zsh
 
   # Link the actual dotfiles
   link ${DOTFILES_DIRECTORY}
