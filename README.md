@@ -22,5 +22,6 @@ Here's the quick and dirty setup process:
 ```
 git clone git@github.com:fredoliveira/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+git submodule update --init --recursive
 bin/dotfiles
 ```
