@@ -1,5 +1,5 @@
 # Setup path
-export PATH=$HOME/.bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/bin:$PATH
 
 # Load z
 . ~/.dotfiles/configs/zsh/z/z.sh
