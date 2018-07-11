@@ -58,6 +58,10 @@ zsh() {
   else
     success "shell is already zsh. Skipping zsh setup."
   fi
+
+  info "adding spaceship prompt"
+  git clone https://github.com/denysdovhan/spaceship-prompt.git "~/.omz/custom/themes/spaceship-prompt"
+  ln -s "~/.omz/custom/themes/spaceship-prompt/spaceship.zsh-theme" "~/.omz/custom/themes/spaceship.zsh-theme"
 }
 
 homebrew () {
