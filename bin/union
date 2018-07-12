@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# install the package dependencies
+brew install postgresql
+brew install imagemagick@6
+brew install redis
+brew install elasticsearch
+brew install node@8
+brew install ansible
+
+# link imagemagick
+brew link --force imagemagick@6

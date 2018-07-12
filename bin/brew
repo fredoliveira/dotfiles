@@ -29,16 +29,8 @@ brew install git
 brew install git-flow
 
 # ruby
-user "installing ruby"
 brew install ruby
-
-user "installing ansible"
-brew install ansible
-
-# node, yarn
-user "installing node and yarn"
-brew install node
-brew install yarn
+brew install rbenv
 
 # GPG
 user "installing gpg"
