@@ -93,7 +93,7 @@ main() {
   # Install homebrew packages
   homebrew
 
-  # Setup zsh as the shell
+  # Setup zsh as the shell and spaceship as the prompt theme
   zsh
 
   # Link the actual dotfiles

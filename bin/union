@@ -6,7 +6,11 @@ brew install imagemagick@6
 brew install redis
 brew install elasticsearch
 brew install node@8
-brew install ansible
+brew install yarn --without-node
 
 # link imagemagick
 brew link --force imagemagick@6
+
+# ansible and tower-cli
+brew install ansible
+pip install ansible-tower-cli
