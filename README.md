@@ -8,10 +8,12 @@ case, go all out and run `bin/dotfiles`.
 ### What's included
 
 * Vim setup
+* Emacs (+spacemacs) setup
 * Git configuration
 * Tmux configuration
 * Ack configuration
 * Zsh shell setup (with OMZ)
+* A couple of terminal fonts
 
 (Go through `bin/brew` to see and tweak which homebrew packages are installed.)
 
@@ -55,3 +57,7 @@ A typical run (this one is from a system that was already partially set up) migh
 ✓ skipped /Users/fred/.dotfiles/configs/gitignore.symlink
 ✓ skipped /Users/fred/.dotfiles/configs/editorconfig.symlink
 ```
+
+### Post-installation
+
+After installing all the packages, re-opening a terminal should do the trick, but before you do, make sure you install the fonts `Source Code Pro` (used by the Spacemacs configuration). The most recent release is included in the `fonts` folder.
