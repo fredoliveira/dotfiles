@@ -18,6 +18,11 @@ brew install wget
 user "installing vim"
 brew install vim
 
+user "installing emacs"
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
+
 # git and git-flow
 user "installing git"
 brew install git
@@ -35,9 +40,9 @@ user "installing node and yarn"
 brew install node
 brew install yarn
 
-# PGP
-user "installing pgp"
-brew install pgp
+# GPG
+user "installing gpg"
+brew install gpg
 
 # casks
 user "installing iterm2"
@@ -54,8 +59,8 @@ user "installing dash"
 brew cask install dash
 user "installing transmit"
 brew cask install transmit
-user "installing sublime-text"
-brew cask install sublime-text
+user "installing keybase"
+brew cask install keybase
 
 # cleanup
 user "cleaning up homebrew"
