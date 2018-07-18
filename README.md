@@ -61,3 +61,5 @@ A typical run (this one is from a system that was already partially set up) migh
 ### Post-installation
 
 After installing all the packages, re-opening a terminal should do the trick, but before you do, make sure you install the fonts `Source Code Pro` (used by the Spacemacs configuration). The most recent release is included in the `fonts` folder.
+
+If you get an error about missing plugins in vim, run `vim-plug`'s plugin install procedure by executing `:PlugInstall`.
