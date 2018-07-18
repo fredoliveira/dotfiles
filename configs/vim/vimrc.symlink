@@ -19,7 +19,7 @@ if !has('nvim')
   Plug 'tpope/vim-sensible'
 endif
 
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
