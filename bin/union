@@ -13,7 +13,8 @@ brew install yarn --without-node
 brew link --force imagemagick@6
 
 # ansible and tower-cli
-brew install ansible
+pip install ansible
+pip install boto
 pip install ansible-tower-cli
 
 # ruby version
