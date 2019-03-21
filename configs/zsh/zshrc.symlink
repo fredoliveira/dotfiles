@@ -140,3 +140,5 @@ SPACESHIP_DOCKER_SUFFIX=") "
 SPACESHIP_DOCKER_SYMBOL=""
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+unsetopt nomatch
