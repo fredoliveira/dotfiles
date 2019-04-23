@@ -38,6 +38,7 @@ Plug 'Shougo/neocomplete'
 Plug 'tpope/vim-rails'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
+Plug 'elixir-editors/vim-elixir'
 
 " Interface
 Plug 'vim-airline/vim-airline'
@@ -188,4 +189,3 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
