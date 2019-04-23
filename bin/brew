@@ -16,7 +16,8 @@ brew install wget
 
 # editors
 user "installing vim"
-brew install vim
+#brew install vim
+brew install neovim
 
 user "installing emacs"
 brew tap d12frosted/emacs-plus
