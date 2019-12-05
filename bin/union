@@ -3,14 +3,11 @@
 # install the package dependencies
 brew install postgresql
 brew install imagemagick@6
-brew install redis
-brew cask install homebrew/cask-versions/java8
-brew install elasticsearch
-brew install node@8
-brew install yarn --without-node
-
-# link imagemagick
 brew link --force imagemagick@6
+brew install redis
+brew cask install homebrew/cask-versions/adoptopenjdk8
+brew install elasticsearch
+brew install yarn
 
 # ansible and tower-cli
 pip install ansible
@@ -18,8 +15,8 @@ pip install boto
 pip install ansible-tower-cli
 
 # ruby version
-rbenv install 2.4.4
-rbenv global 2.4.4
+rbenv install 2.5.5
+rbenv global 2.5.5
 gem install bundler
 
 # overmind
