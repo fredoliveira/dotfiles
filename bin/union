@@ -9,15 +9,13 @@ brew cask install homebrew/cask-versions/adoptopenjdk8
 brew install elasticsearch
 brew install yarn
 
-# ansible and tower-cli
-pip install ansible
-pip install boto
-pip install ansible-tower-cli
+# ansible
+brew install ansible
 
 # ruby version
-rbenv install 2.5.5
-rbenv global 2.5.5
-gem install bundler
+# rbenv install 2.5.5
+# rbenv global 2.5.5
+# gem install bundler
 
 # overmind
-brew install overmind
+# brew install overmind

@@ -1,11 +1,5 @@
 # Setup path
-export PATH=$HOME/.bin:/usr/local/opt/node@8/bin:/usr/local/opt/imagemagick@6/bin:/usr/local/bin:$PATH
-
-# Load z
-. ~/.dotfiles/configs/zsh/z/z.sh
-
-# Source a local .env file if it exists
-[ -f ~/.env ] && source ~/.env
+export PATH="/usr/local/opt/ruby@2.5/bin:$(brew --prefix)/lib/ruby/gems/2.5.0/bin:/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
