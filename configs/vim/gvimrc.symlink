@@ -1,9 +1,0 @@
-" Macvim-specific options
-
-" Editor font family
-set guifont=Source\ Code\ Pro:h13
-
-" Remove srollbars
-set guioptions-=r
-set guioptions-=T
-set guioptions-=L
