@@ -14,46 +14,30 @@ brew install wget
 
 # editors
 user "installing vim"
-#brew install vim
 brew install neovim
-
-# user "installing emacs"
-# brew tap d12frosted/emacs-plus
-# brew install emacs-plus
-# ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
 
 # git and git-flow
 user "installing git"
 brew install git
 brew install git-flow
+brew install diff-so-fancy
 
 # ruby
 brew install ruby@2.5
-# brew install rbenv
-
-# GPG
-# user "installing gpg"
-# brew install gpg
 
 # casks
-# user "installing iterm2"
-# brew cask install iterm2
-# user "installing fantastical"
-# brew cask install fantastical
-# user "installing spotify"
-# brew cask install spotify
-# user "installing dropbox"
-# brew cask install dropbox
-# user "installing slack"
-# brew cask install slack
-# user "installing dash"
-# brew cask install dash
-# user "installing transmit"
-# brew cask install transmit
-# user "installing keybase"
-# brew cask install keybase
-# user "installing vlc"
-# brew cask install vlc
+user "installing iterm2"
+brew cask install iterm2
+user "installing fantastical"
+brew cask install fantastical
+user "installing spotify"
+brew cask install spotify
+user "installing slack"
+brew cask install slack
+user "installing dash"
+brew cask install dash
+user "installing transmit"
+brew cask install transmit
 
 # cleanup
 user "cleaning up homebrew"
