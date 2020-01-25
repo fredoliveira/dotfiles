@@ -38,6 +38,8 @@ user "installing dash"
 brew cask install dash
 user "installing transmit"
 brew cask install transmit
+user "installing vscodium"
+brew cask install vscodium
 
 # cleanup
 user "cleaning up homebrew"
