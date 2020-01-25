@@ -7,12 +7,23 @@ init() {
   separator
   info "checking basic dependencies:"
 
-  # Xcode
-  if ! type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
-    info "running xcode-select"
-    xcode-select --install
-  else
-    success "xcode is installed"
+  # Homebrew and xcode-select if running on a mac
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Xcode
+    if ! type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}"; then
+      info "running xcode-select"
+      xcode-select --install
+    else
+      success "xcode is installed"
+    fi
+
+    # Homebrew
+    if ! type_exists "brew"; then
+      info "installing homebrew"
+      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+      success "homebrew is installed"
+    fi
   fi
 
   # Home binaries folder
@@ -30,14 +41,6 @@ init() {
     chmod 700 $HOME/.ssh
   else
     success "ssh directory (~/.ssh) exists"
-  fi
-
-  # Homebrew
-  if ! type_exists "brew"; then
-    info "installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  else
-    success "homebrew is installed"
   fi
 
   RETVAL="0"
@@ -58,10 +61,6 @@ zsh() {
   else
     success "shell is already zsh. Skipping zsh setup."
   fi
-
-  # info "adding spaceship prompt"
-  # git clone https://github.com/denysdovhan/spaceship-prompt.git "~/.omz/custom/themes/spaceship-prompt"
-  # ln -s "~/.omz/custom/themes/spaceship-prompt/spaceship.zsh-theme" "~/.omz/custom/themes/spaceship.zsh-theme"
 }
 
 homebrew () {
@@ -74,6 +73,33 @@ homebrew () {
     source ${DOTFILES_DIRECTORY}/bin/brew
   else
     success "skipped homebrew package installation"
+  fi
+}
+
+fonts () {
+  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    FONT_FOLDER="$HOME/.local/share/fonts"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    FONT_FOLDER="$HOME/Library/Fonts"
+  fi
+
+  separator
+  info "font installation"
+
+  prompt "want to install fonts? press 'y' to proceed and anything else to skip."
+  read -n 1 -r -s
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Opentype
+    for font in fonts/**/*.otf; do
+      cp "$font" $FONT_FOLDER
+    done
+
+    # Truetype
+    for font in fonts/**/*.ttf; do
+      cp "$font" $FONT_FOLDER
+    done
+  else
+    success "skipped font installation"
   fi
 }
 
@@ -91,13 +117,18 @@ main() {
   init
 
   # Install homebrew packages
-  homebrew
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    homebrew
+  fi
 
-  # Setup zsh as the shell and spaceship as the prompt theme
+  # Setup zsh as the shell
   zsh
 
   # Link the actual dotfiles
   link ${DOTFILES_DIRECTORY}
+
+  # Setup fonts
+  fonts
 
   # Return with the current return value
   exit $RETVAL
