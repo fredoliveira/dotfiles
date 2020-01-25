@@ -101,6 +101,11 @@ fonts () {
   else
     success "skipped font installation"
   fi
+
+  # Rebuild font cache on linux
+  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    fc-cache -f -v
+  fi
 }
 
 main() {
