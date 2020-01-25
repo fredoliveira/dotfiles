@@ -8,11 +8,9 @@ case, go all out and run `bin/dotfiles`.
 ### What's included
 
 * Vim setup
-* Emacs (+spacemacs) setup
 * Git configuration
 * Tmux configuration
-* Ack configuration
-* Zsh shell setup (with OMZ)
+* Zsh shell setup (with Antigen)
 * A couple of terminal fonts
 
 (Go through `bin/brew` to see and tweak which homebrew packages are installed.)
