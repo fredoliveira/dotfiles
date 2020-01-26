@@ -2,8 +2,18 @@
 export PATH="~/.bin:$PATH"
 
 # LS Colors
-alias ls='ls --color=auto'
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+# Aliases
+if [ "$(uname -s)" = "Darwin" ]; then
+  alias ls="ls -FG"
+else
+  alias ls="ls -F --color"
+fi
+
+alias l="ls -lAh"
+alias la="ls -A"
+alias ll="ls -l"
 
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -24,6 +34,13 @@ setopt auto_pushd
 unsetopt pushd_ignore_dups
 setopt pushdminus
 
+# Other options
+unsetopt extended_glob
+unsetopt nomatch
+setopt auto_param_slash
+setopt mark_dirs
+setopt list_types
+
 # Completion
 setopt auto_menu # Show a menu with completions
 setopt always_to_end # Always move cursor to end of completion
@@ -36,23 +53,27 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+# completion
 autoload -Uz compinit
-compinit
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
 
 # Other
 setopt prompt_subst
 
 # Antibody setup
-source <(antibody init)
-antibody bundle robbyrussell/oh-my-zsh path:plugins/git
-antibody bundle robbyrussell/oh-my-zsh path:plugins/git-flow
-antibody bundle robbyrussell/oh-my-zsh path:plugins/dotenv
-antibody bundle robbyrussell/oh-my-zsh path:plugins/z
-antibody bundle zsh-users/zsh-autosuggestions
-antibody bundle zsh-users/zsh-completions
-antibody bundle zsh-users/zsh-history-substring-search
-antibody bundle zsh-users/zsh-syntax-highlighting
-antibody bundle romkatv/powerlevel10k
+# Remember to run this whenever you update your plugins:
+# antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+source ~/.zsh_plugins.sh
+
+# History substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # P10k (to customize, run `p10k configure` or edit ~/.p10k.zsh)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
