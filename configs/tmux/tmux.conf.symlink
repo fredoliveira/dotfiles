@@ -35,8 +35,8 @@ setw -g monitor-activity off
 setw -g visual-activity off
 set-option -g mouse on
 
-bind-key \\ split-window -h
-bind-key ` split-window -v
+bind-key \\ split-window -h -c "#{pane_current_path}"
+bind-key ` split-window -v -c "#{pane_current_path}"
 
 bind-key -r Down resize-pane -D 5
 bind-key -r Up resize-pane -U 5
