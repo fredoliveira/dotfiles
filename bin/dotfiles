@@ -98,13 +98,13 @@ fonts () {
     for font in fonts/**/*.ttf; do
       cp "$font" $FONT_FOLDER
     done
+
+    # Rebuild font cache on linux
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+      fc-cache -f -v
+    fi
   else
     success "skipped font installation"
-  fi
-
-  # Rebuild font cache on linux
-  if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    fc-cache -f -v
   fi
 }
 
