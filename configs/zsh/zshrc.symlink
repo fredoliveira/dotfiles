@@ -1,5 +1,5 @@
 # Setup ~/.bin as part of the path
-export PATH="~/.bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
 # LS Colors
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
@@ -66,6 +66,9 @@ fi
 
 # Other
 setopt prompt_subst
+
+# Dotenv
+ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
 
 # Antibody setup
 # Remember to run this whenever you update your plugins:
