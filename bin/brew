@@ -11,6 +11,8 @@ user "installing shell stuff (zsh, tmux, fzf, wget)"
 brew install tmux
 brew install fzf
 brew install wget
+brew install ripgrep
+brew install htop
 
 # editors
 user "installing vim"
