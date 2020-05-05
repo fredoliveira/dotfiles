@@ -11,7 +11,7 @@
       org-ellipsis " ▼ "
       org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷"))
 
-(setq display-line-numbers-type relative)
+(setq display-line-numbers-type 'relative)
 
 (setq mac-option-key-is-meta nil
       mac-command-key-is-meta t
