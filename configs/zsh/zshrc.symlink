@@ -15,6 +15,7 @@ alias l="ls -lAh"
 alias la="ls -A"
 alias ll="ls -l"
 alias c="code-insiders"
+alias e="emacs -nw"
 
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
