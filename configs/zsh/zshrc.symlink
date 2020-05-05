@@ -83,6 +83,8 @@ bindkey '^[[B' history-substring-search-down
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-eval "$(rbenv init -)"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+# macOS specific settings
+if [[ `uname` == "Darwin" ]]; then
+  eval "$(rbenv init -)"
+  export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+fi
