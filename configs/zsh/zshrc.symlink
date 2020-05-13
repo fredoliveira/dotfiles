@@ -11,9 +11,9 @@ else
   alias ls="ls -F --color"
 fi
 
-alias l="ls -lAh"
-alias la="ls -A"
-alias ll="ls -l"
+alias l="exa -l"
+alias la="exa -a"
+alias ll="exa -la"
 alias c="code-insiders"
 alias e="emacs -nw"
 

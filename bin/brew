@@ -13,6 +13,7 @@ brew install fzf
 brew install wget
 brew install ripgrep
 brew install htop
+brew install exa
 
 # editors
 user "installing vim"
