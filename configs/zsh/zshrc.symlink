@@ -14,8 +14,9 @@ fi
 alias l="exa -l"
 alias la="exa -a"
 alias ll="exa -la"
-alias c="code-insiders"
+alias c="code"
 alias e="emacs -nw"
+alias gs="git status"
 
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
