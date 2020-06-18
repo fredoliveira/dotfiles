@@ -26,7 +26,8 @@ brew install git-flow
 brew install diff-so-fancy
 
 # ruby
-brew install ruby@2.5
+brew install rbenv
+brew install ruby-build
 
 # casks
 user "installing iterm2"
@@ -41,8 +42,8 @@ user "installing dash"
 brew cask install dash
 user "installing transmit"
 brew cask install transmit
-user "installing vscodium"
-brew cask install vscodium
+user "installing vscode"
+brew cask install visual-studio-code
 
 # cleanup
 user "cleaning up homebrew"
