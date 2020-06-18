@@ -87,5 +87,7 @@ bindkey '^[[B' history-substring-search-down
 # macOS specific settings
 if [[ `uname` == "Darwin" ]]; then
   eval "$(rbenv init -)"
-  export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+  # Homebrew path
+  export PATH="/usr/local/bin:$PATH"
 fi
