@@ -23,6 +23,7 @@ endif
 
 " Git support
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -40,11 +41,13 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
 
-" Interface
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'nanotech/jellybeans.vim'
-Plug 'ajh17/Spacegray.vim'
+" Powerline
+Plug 'itchyny/lightline.vim'
+set noshowmode
+
+" Theme
+let g:sonokai_style = 'shusia'
+Plug 'sainnhe/sonokai'
 
 call plug#end()
 
@@ -107,12 +110,12 @@ set t_vb=
 set tm=500
 
 " Colors, fonts
-set background=dark
-colorscheme jellybeans
-
 if (has("termguicolors"))
   set termguicolors
 endif
+
+set background=dark
+colorscheme sonokai
 
 set t_ut=
 
@@ -164,10 +167,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " EditorConfig options to deal with fugitive support
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" Vim-airline configuration
-let g:airline_powerline_fonts = 1
-let g:airline_theme='jellybeans'
 
 " FZF configuration
 let g:fzf_action = {
