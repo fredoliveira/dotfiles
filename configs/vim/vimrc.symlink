@@ -49,6 +49,9 @@ set noshowmode
 let g:sonokai_style = 'shusia'
 Plug 'sainnhe/sonokai'
 
+" Which-key
+Plug 'liuchengxu/vim-which-key'
+
 call plug#end()
 
 filetype plugin indent on
@@ -175,7 +178,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+  \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -188,3 +191,15 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" Lightline configuration
+let g:lightline = {
+  \ 'colorscheme': 'darcula',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \ }

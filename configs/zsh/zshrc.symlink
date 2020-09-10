@@ -88,6 +88,6 @@ bindkey '^[[B' history-substring-search-down
 if [[ `uname` == "Darwin" ]]; then
   eval "$(rbenv init -)"
 
-  # Homebrew path
-  export PATH="/usr/local/bin:$PATH"
+  # Homebrew, cargo path
+  export PATH="/usr/local/bin:$HOME/.cargo/bin:$PATH"
 fi
