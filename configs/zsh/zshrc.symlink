@@ -11,6 +11,7 @@ else
   alias ls="ls -F --color"
 fi
 
+alias ls="exa"
 alias l="exa -l"
 alias la="exa -a"
 alias ll="exa -la"
@@ -71,6 +72,7 @@ setopt prompt_subst
 
 # Dotenv
 ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
+ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
 
 # Antibody setup
 # Remember to run this whenever you update your plugins:
@@ -86,8 +88,12 @@ bindkey '^[[B' history-substring-search-down
 
 # macOS specific settings
 if [[ `uname` == "Darwin" ]]; then
-  eval "$(rbenv init -)"
-
   # Homebrew, cargo path
   export PATH="/usr/local/bin:$HOME/.cargo/bin:$PATH"
 fi
+
+# We use rbenv everywhere, so.
+eval "$(rbenv init -)"
+
+# Have a consistent TERM variable
+export TERM=xterm-256color

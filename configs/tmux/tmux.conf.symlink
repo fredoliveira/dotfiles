@@ -58,6 +58,7 @@ bind-key -r p previous-window
 bind-key b break-pane
 bind-key ^ swap-pane -U
 bind-key v swap-pane -D
+bind-key x send-keys -R \; clear-history
 
 # Copy to system clipboard as well.
 bind-key -Tcopy-mode-vi 'v' send -X begin-selection
