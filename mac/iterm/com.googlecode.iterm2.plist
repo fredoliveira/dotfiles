@@ -44,8 +44,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 224.000000, 255.000000, NO, NO</string>
+		<string>0.000000, 256.000000, 224.000000, 48.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -82,7 +82,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>609 528 620 392 0 0 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>47 0 1745 1097 0 0 1792 1097 </string>
+	<string>169 389 570 488 0 0 1792 1095 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>147 390 570 488 0 0 1792 1095 </string>
 	<key>NeverWarnAboutShortLivedSessions_C82B3FC3-1AEF-405A-A851-C463F7308320</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_C82B3FC3-1AEF-405A-A851-C463F7308320_selection</key>
@@ -952,12 +954,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1792, 1120}}</string>
 		<key>topLeft</key>
-		<string>{857, 768}</string>
+		<string>{557, 731}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>1D51C5F8-56C5-4EF1-893D-E10DB6CAD76D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>15</integer>
+	<integer>26</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1738,7 +1740,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T17:19:01Z</date>
+	<date>2020-09-09T20:33:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -1750,8 +1752,12 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
+	<integer>6</integer>
+	<key>TerminalMargin</key>
+	<integer>5</integer>
+	<key>TerminalVMargin</key>
 	<integer>5</integer>
 	<key>UseBorder</key>
 	<false/>

@@ -24,6 +24,7 @@ endif
 " Git support
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -40,6 +41,9 @@ Plug 'tpope/vim-rails'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
+
+" Vimwiki
+Plug 'vimwiki/vimwiki'
 
 " Powerline
 Plug 'itchyny/lightline.vim'
@@ -67,8 +71,8 @@ set title
 set autoread
 
 " A better leader key
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Backspace
 set backspace=indent,eol,start
@@ -140,7 +144,7 @@ set lbr
 set tw=500
 
 " Map <Space> to / (search)
-map <Space> /
+" map <Space> /
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -203,3 +207,9 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
   \ }
+
+" VimWiki configuration
+let g:vimwiki_list = [
+  \ {'path': '~/sync/brain/brain/',
+  \   'syntax': 'markdown', 'ext': '.md'
+  \ }]

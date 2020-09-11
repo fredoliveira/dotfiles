@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BASE=~/.dotfiles
+
+# For every config in the configs folder, create a dotfile
+for file in $BASE/config/*; do
+  name=${file##*/}
+  mkdir -pv backup
+  [ -e ~/."$name" ] && mv -v ~/."$name" backup/."$name"
+  ln -sfv "$BASE/config/$name" ~/."$name"
+done
+
