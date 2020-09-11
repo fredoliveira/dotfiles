@@ -1,0 +1,32 @@
+#!/bin/bash
+
+BASE=~/.dotfiles
+
+# Mac setup (brew packages, casks)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Homebrew installation
+  [ -z "$(which brew)" ] &&
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+  # Packages
+  brew install \
+    tmux fzf wget ripgrep htop exa neovim \
+    git git-flow rbenv ruby-build zsh
+
+  # Casks
+  brew cask install \
+    iterm2 spotify slack visual-studio-code \
+    maccy transmit
+
+  # Work setup - uncomment before running, if necessary
+  # brew cask install homebrew/cask-versions/adoptopenjdk8
+  # brew install postgresql imagemagick@6 redis yarn ansible overmind
+  # brew install elasticsearch
+  # brew link --force imagemagick@6
+  # rbenv install 2.6.6
+  # rbenv global 2.6.6
+  # gem install bundler
+
+  # Final cleanup
+  brew cleanup
+fi

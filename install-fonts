@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  FONT_FOLDER="$HOME/.local/share/fonts"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  FONT_FOLDER="$HOME/Library/Fonts"
+fi
+
+# Opentype
+for font in fonts/**/*.otf; do
+  cp "$font" $FONT_FOLDER
+done
+
+# Truetype
+for font in fonts/**/*.ttf; do
+  cp "$font" $FONT_FOLDER
+done
+
+# Rebuild font cache on linux
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  fc-cache -f -v
+fi

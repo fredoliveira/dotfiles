@@ -10,3 +10,6 @@ for file in $BASE/config/*; do
   ln -sfv "$BASE/config/$name" ~/."$name"
 done
 
+# Tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf
