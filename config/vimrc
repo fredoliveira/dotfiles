@@ -210,6 +210,6 @@ let g:lightline = {
 
 " VimWiki configuration
 let g:vimwiki_list = [
-  \ {'path': '~/sync/brain/brain/',
+  \ {'path': '~/sync/brain/exocortex/',
   \   'syntax': 'markdown', 'ext': '.md'
   \ }]
