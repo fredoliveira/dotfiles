@@ -89,7 +89,7 @@ bindkey '^[[B' history-substring-search-down
 # macOS specific settings
 if [[ `uname` == "Darwin" ]]; then
   # Homebrew, cargo path
-  export PATH="/usr/local/bin:$HOME/.cargo/bin:$PATH"
+  export PATH="/usr/local/bin:$HOME/.cargo/bin:$HOME/Library/Python/3.8/bin:$PATH"
 fi
 
 # We use rbenv everywhere, so.
