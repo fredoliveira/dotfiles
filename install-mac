@@ -11,7 +11,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Packages
   brew install \
     tmux fzf wget ripgrep htop exa neovim \
-    git git-flow gh rbenv ruby-build zsh
+    git git-flow gh rbenv ruby-build zsh bat git-delta
 
   # Casks
   brew cask install \
