@@ -11,12 +11,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Packages
   brew install \
     tmux fzf wget ripgrep htop exa neovim \
-    git git-flow gh rbenv ruby-build zsh bat git-delta
+    git git-flow gh rbenv ruby-build zsh bat git-delta \
+    starship
 
   # Casks
   brew cask install \
     iterm2 spotify slack visual-studio-code \
     maccy transmit
+
+  # Font-specific casks
+  brew tap homebrew/cask-fonts
+  brew install --cask font-iosevka-nerd-font
 
   # Work setup - uncomment before running, if necessary
   # brew cask install homebrew/cask-versions/adoptopenjdk8
