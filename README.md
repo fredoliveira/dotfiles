@@ -10,14 +10,10 @@ case, go all out and look below for instructions.
 - Vim setup (see `install-vim` and `configs/vimrc`)
 - Git configuration (With `git-flow`)
 - Tmux configuration (With TPM)
-- Zsh shell setup (with `antibody`)
+- Zsh shell setup (with `starship` and `antidote`)
 - A couple of terminal fonts
 
 ### Installation process
-
-I'm in the process of converting my dotfiles to [chezmoi](https://www.chezmoi.io/),
-which is honestly fantastic. I recommend you go through the documentation to figure
-out exactly how it works, but the very quick way to install these is as follows:
 
 ```
 BINDIR=~/.bin sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply fredoliveira
