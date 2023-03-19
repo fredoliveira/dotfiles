@@ -17,7 +17,6 @@ brew install ripgrep
 brew install exa
 brew install wget
 brew install htop
-brew install neovim
 brew install git
 brew install git-flow
 brew install asdf
@@ -26,6 +25,12 @@ brew install overmind
 brew install svn # FIXME: until homebrew cask figures out its dependency for font installation
 brew install fd
 brew install gpg
+
+# Neovim, Astrovim and related dependencies
+brew install --HEAD neovim
+brew install bottom
+brew install lazygit
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 # Syncthing
 brew install syncthing
