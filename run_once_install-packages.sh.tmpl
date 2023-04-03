@@ -21,7 +21,6 @@ brew install git-flow
 brew install asdf
 brew install yt-dlp
 brew install overmind
-brew install svn # FIXME: until homebrew cask figures out its dependency for font installation
 brew install fd
 brew install gpg
 
@@ -30,6 +29,7 @@ brew install --HEAD neovim
 brew install bottom
 brew install lazygit
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim --headless -c 'quitall'
 
 # Syncthing
 brew install syncthing
@@ -79,32 +79,15 @@ asdf plugin add nodejs || true
 asdf plugin add yarn   || true
 asdf plugin add ruby   || true
 
-# Work-related packages
-{{ if .work -}}
-brew install awscli
-brew install postgresql
-brew install redis
-brew install opensearch
-brew install imagemagick
-brew install vips
-{{ end -}}
-
 # Mac App Store apps
-{{ if .mas -}}
 brew install mas
 mas install 1435957248  # Drafts
 mas install 1475387142  # Tailscale
 mas install 937984704   # Amphetamine
-mas install 1289197285  # Mindnode
+# mas install 1289197285  # Mindnode
 # mas install 497799835   # Xcode
 # mas install 1451685025  # Wireguard
 # mas install 409183694   # Keynote
-{{ end -}}
-
-# Music packages
-{{ if .music -}}
-brew install ableton-live-suite
-{{ end -}}
 
 # Remove quarantine attribute from chromium so that it can run straight off the cask install
 xattr -cr /Applications/Chromium.app
