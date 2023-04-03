@@ -1,6 +1,5 @@
 # Setup some extra paths (node, python, custom scripts)
-export PATH="/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$PATH"
-export ES_JAVA_HOME="/usr"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$PATH"
 
 # Assuming we have Code anywhere, but this should probably just be vim
 export EDITOR="code -w"
@@ -17,18 +16,10 @@ alias c="code"
 alias cm="chezmoi"
 alias buu="brew update && brew upgrade"
 
-# A few services
-# More of these here: https://github.com/chubin/awesome-console-services
-alias weather="curl wttr.in/Coimbra"
-alias covid="curl snf-878293.vm.okeanos.grnet.gr"
-alias ip="dig @1.1.1.1 whoami.cloudflare ch txt +short"
-
 # History configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-
 HISTSIZE=50000
 SAVEHIST=10000
-
 setopt extended_history # Saves timestamps and durations in history logs
 setopt hist_expire_dups_first # Trim duplicate commands when trimming the history file
 setopt hist_ignore_dups # Ignore the same command ran multiple times in a row
