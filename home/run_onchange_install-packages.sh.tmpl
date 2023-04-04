@@ -24,14 +24,6 @@ brew install overmind
 brew install fd
 brew install gpg
 
-# Neovim, Astrovim and related dependencies
-brew install --HEAD neovim
-brew install bottom
-brew install lazygit
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-git clone --depth 1 https://github.com/fredoliveira/astronvim-config ~/.config/nvim/lua/user
-nvim --headless -c 'quitall'
-
 # Syncthing
 brew install syncthing
 brew services restart syncthing
@@ -80,11 +72,19 @@ asdf plugin add nodejs || true
 asdf plugin add yarn   || true
 asdf plugin add ruby   || true
 
+# Neovim, Astrovim and related dependencies
+brew install --HEAD neovim
+brew install bottom
+brew install lazygit
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+git clone --depth 1 https://github.com/fredoliveira/astronvim-config ~/.config/nvim/lua/user
+nvim --headless -c 'quitall'
+
 # Mac App Store apps
 brew install mas
-mas install 1435957248  # Drafts
-mas install 1475387142  # Tailscale
-mas install 937984704   # Amphetamine
+mas install 1435957248    # Drafts
+mas install 1475387142    # Tailscale
+mas install 937984704     # Amphetamine
 # mas install 1289197285  # Mindnode
 # mas install 497799835   # Xcode
 # mas install 1451685025  # Wireguard
@@ -93,10 +93,8 @@ mas install 937984704   # Amphetamine
 # Remove quarantine attribute from chromium so that it can run straight off the cask install
 xattr -cr /Applications/Chromium.app
 
-# Miscellaneous stuff that may require user input
-
 # Install rust
-curl https://sh.rustup.rs -sSf | sh -s -- -y
+# curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
