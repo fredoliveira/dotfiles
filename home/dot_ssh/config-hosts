@@ -1,0 +1,13 @@
+Host bowser
+  User fred
+  Port 300
+
+Host finland
+  Port 300
+  User fred
+
+Host germany
+  User fred
+
+Host solaris
+  User fred
