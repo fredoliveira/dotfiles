@@ -16,5 +16,5 @@ case, go all out and look below for instructions.
 ### Installation process
 
 ```
-BINDIR=~/.bin sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply fredoliveira
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply fredoliveira
 ```
