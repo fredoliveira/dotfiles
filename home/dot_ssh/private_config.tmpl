@@ -9,10 +9,6 @@ Host *
   ControlPersist 72000
   ControlPath ~/.ssh/control-%h-%p-%r
 
-  # Allow storing passphrases in the macOS keychain
-  AddKeysToAgent yes
-  UseKeychain yes
-
   # Keep the connection temporarily open by sending data every few minutes.
   ServerAliveCountMax 6
 
@@ -20,8 +16,13 @@ Host *
   # See https://www.upguard.com/blog/fixing-the-new-openssh-roaming-bug
   UseRoaming no
 
+{{ if eq .chezmoi.os "darwin" }}
+  # Allow storing passphrases in the macOS keychain
+  AddKeysToAgent yes
+  UseKeychain yes
+
   # Use the 1password agent
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-  ForwardAgent yes
+{{ end }}
 
 Include ~/.ssh/config-hosts

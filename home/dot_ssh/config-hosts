@@ -1,13 +1,17 @@
 Host bowser
   User fred
   Port 300
+  ForwardAgent yes
 
 Host finland
   Port 300
   User fred
+  ForwardAgent yes
 
 Host germany
   User fred
+  ForwardAgent yes
 
 Host solaris
   User fred
+  ForwardAgent yes
