@@ -22,6 +22,7 @@ alias ll="eza -la"
 alias c="code"
 alias cm="chezmoi"
 alias buu="brew update && brew upgrade"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # History configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
