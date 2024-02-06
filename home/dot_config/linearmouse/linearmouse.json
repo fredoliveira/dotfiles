@@ -1,0 +1,35 @@
+{
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0xc547",
+          "productName" : "USB Receiver",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : false,
+        "speed" : 0.22,
+        "acceleration" : 0
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productName" : "PRO X Wireless",
+          "vendorID" : "0x46d",
+          "productID" : "0xc094",
+          "serialNumber" : "66128F3E"
+        }
+      },
+      "pointer" : {
+        "speed" : 0.22,
+        "acceleration" : 0
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5"
+}
