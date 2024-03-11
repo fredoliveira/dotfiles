@@ -12,6 +12,7 @@ brew install zsh
 brew install tmux
 brew install fzf
 brew install ripgrep
+brew install fd
 brew install eza
 brew install wget
 brew install btop
@@ -45,17 +46,19 @@ brew install slack
 brew install devonthink
 brew install appcleaner
 brew install hiddenbar
+brew install linearmouse
 
 # Install fonts
 brew tap homebrew/cask-fonts
+brew install font-inter
+brew install font-monaspace-nerd-font
 brew install font-iosevka-nerd-font
+brew install font-jetbrains-mono-nerd-font
 brew install font-ia-writer-duo
 brew install font-ia-writer-duospace
 brew install font-ia-writer-mono
 brew install font-ia-writer-quattro
 brew install font-roboto
-brew install font-jetbrains-mono-nerd-font
-brew install font-inter
 
 # Antidote for zsh
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
@@ -69,22 +72,13 @@ asdf plugin-add pnpm   || true
 asdf plugin-add poetry || true
 asdf install
 
-# Neovim, Astrovim and related dependencies
+# Neovim setup
 brew install neovim
-# brew install bottom
-# brew install lazygit
-# git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-# git clone --depth 1 https://github.com/fredoliveira/astronvim-config ~/.config/nvim/lua/user
-# nvim --headless -c 'quitall'
-
-# Work-related packages
-brew install awscli
 
 # Mac App Store apps
 brew install mas
 mas install 1435957248    # Drafts
 mas install 1475387142    # Tailscale
-mas install 937984704     # Amphetamine
 mas install 1542143627    # Omnifocus
 # mas install 1289197285  # Mindnode
 # mas install 497799835   # Xcode

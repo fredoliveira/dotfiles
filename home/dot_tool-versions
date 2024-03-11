@@ -1,5 +1,6 @@
 nodejs 20.9.0
 yarn 1.22.19
 ruby 3.2.2
-python 3.10.13
+python 3.12.2
 pnpm 8.15.1
+poetry 1.8.1
