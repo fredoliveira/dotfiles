@@ -13,7 +13,7 @@ Host germany
   ForwardAgent yes
 
 Host solaris
-  User fred
+  User root
   ForwardAgent yes
   IdentityFile /Users/fred/.ssh/solaris
 
