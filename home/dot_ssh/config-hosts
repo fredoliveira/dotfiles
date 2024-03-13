@@ -33,3 +33,4 @@ Host n8n.capitalfactory.com
 
 Host docker.capitalfactory.com
   User ubuntu
+  ForwardAgent yes
