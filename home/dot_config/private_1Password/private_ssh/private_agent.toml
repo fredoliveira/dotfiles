@@ -1,0 +1,8 @@
+[[ssh-keys]]
+vault = "Private"
+
+[[ssh-keys]]
+vault = "Personal"
+
+[[ssh-keys]]
+vault = "CF Engineering"

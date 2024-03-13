@@ -30,3 +30,6 @@ Host n8n.capitalfactory.com
   User ubuntu
   ForwardAgent yes
   IdentityFile /Users/fred/.ssh/cfn8n
+
+Host docker.capitalfactory.com
+  User ubuntu
