@@ -21,12 +21,15 @@ brew install git-flow
 brew install yt-dlp
 brew install gpg
 brew install age
+brew install zoxide
+brew install uv
 
 # Syncthing
 brew install syncthing
 brew services restart syncthing
 
 # Install casks
+{{ if .casks -}}
 brew install firefox
 brew install iterm2
 brew install visual-studio-code
@@ -48,6 +51,7 @@ brew install appcleaner
 brew install hiddenbar
 brew install linearmouse
 brew install keyboard-maestro
+{{ end -}}
 
 # Install fonts
 brew tap homebrew/cask-fonts

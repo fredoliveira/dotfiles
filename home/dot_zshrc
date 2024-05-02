@@ -85,6 +85,9 @@ antidote load
 # Initialize FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Initialize Zoxide
+eval "$(zoxide init zsh)"
+
 # Initialize asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 

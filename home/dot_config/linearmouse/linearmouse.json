@@ -3,10 +3,10 @@
     {
       "if" : {
         "device" : {
-          "productID" : "0xc547",
           "productName" : "USB Receiver",
+          "vendorID" : "0x46d",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "productID" : "0xc547"
         }
       },
       "pointer" : {
@@ -16,18 +16,83 @@
       }
     },
     {
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productName" : "PRO X Wireless",
-          "vendorID" : "0x46d",
-          "productID" : "0xc094",
-          "serialNumber" : "66128F3E"
-        }
-      },
       "pointer" : {
         "speed" : 0.22,
         "acceleration" : 0
+      },
+      "if" : {
+        "device" : {
+          "productName" : "PRO X Wireless",
+          "productID" : "0xc094",
+          "serialNumber" : "66128F3E",
+          "vendorID" : "0x46d",
+          "category" : "mouse"
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "MX Master",
+          "serialNumber" : "B80CA88CCFD46CDE",
+          "productID" : "0xb017",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0xb034",
+          "productName" : "MX Master 3S",
+          "category" : "mouse",
+          "vendorID" : "0x46d",
+          "serialNumber" : "B40B43A7"
+        }
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "shift" : false,
+            "command" : false,
+            "control" : false,
+            "action" : "appExpose",
+            "option" : false,
+            "button" : 5
+          }
+        ]
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d",
+          "category" : "mouse",
+          "productID" : "0xc548"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "button" : 5,
+            "control" : false,
+            "action" : "appExpose",
+            "command" : false,
+            "shift" : false,
+            "option" : false
+          }
+        ]
       }
     }
   ],

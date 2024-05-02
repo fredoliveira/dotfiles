@@ -1,5 +1,8 @@
+{{- $install_casks := promptBoolOnce . "casks" "casks" -}}
+
 [data]
   email = "fred@helloform.com"
   name = "Fred Oliveira"
   onepasswordAccount = "LJ65XUOQ6VE5PFSTMCUCXSVGYY"
   cfonepasswordAccount = "BEPGXQBVXND5NGNZHD2YJMA6B4"
+  casks = {{ $install_casks }}
