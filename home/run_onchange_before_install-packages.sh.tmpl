@@ -23,6 +23,7 @@ brew install gpg
 brew install age
 brew install zoxide
 brew install uv
+brew install mise
 
 # Syncthing
 brew install syncthing
@@ -68,14 +69,9 @@ brew install font-roboto
 # Antidote for zsh
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
-# Asdf setup
-brew install asdf
-asdf plugin add nodejs || true
-asdf plugin add ruby   || true
-asdf plugin add python || true
-asdf plugin-add pnpm   || true
-asdf plugin-add poetry || true
-asdf install
+# Mise setup
+mise settings set python_compile 1 # Because I use poetry. Probably unnecessary once I drop poetry for uv
+mise install
 
 # Neovim setup
 brew install neovim
