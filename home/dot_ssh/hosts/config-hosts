@@ -7,6 +7,7 @@ Host finland
   Port 300
   User fred
   ForwardAgent yes
+  IdentityFile /Users/fred/.ssh/hosts/key-finland
 
 Host germany
   User fred
@@ -24,12 +25,12 @@ Host tesselate.ai
 Host solaris
   User root
   ForwardAgent yes
-  IdentityFile /Users/fred/.ssh/hosts/solaris
+  IdentityFile /Users/fred/.ssh/hosts/key-solaris
 
 Host n8n.capitalfactory.com
   User ubuntu
   ForwardAgent yes
-  IdentityFile /Users/fred/.ssh/hosts/cfn8n
+  IdentityFile /Users/fred/.ssh/hosts/key-cfn8n
 
 Host docker.capitalfactory.com
   User ubuntu
