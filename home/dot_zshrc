@@ -16,9 +16,9 @@ export TERM=xterm-256color
 
 # A few helpful aliases
 alias g="git"
-alias ls="eza -l"
+alias ls="eza --icons"
 alias l="eza -l"
-alias ll="eza -la"
+alias ll="eza -l -g --icons"
 alias c="code"
 alias cm="chezmoi"
 alias buu="brew update && brew upgrade"
