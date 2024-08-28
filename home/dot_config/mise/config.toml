@@ -2,10 +2,10 @@
 python_compile = true
 
 [tools]
-ruby = "3.3.3"
-nodejs = "20.9.0"
+ruby = "3.3.4"
+nodejs = "20.17.0"
 yarn = "1.22.19"
 python = "3.12.2"
-pnpm = "9.4.0"
+pnpm = "9.8.0"
 poetry = "1.8.1"
 rust = "1.78.0"
