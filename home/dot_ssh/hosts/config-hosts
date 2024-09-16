@@ -27,6 +27,11 @@ Host solaris
   ForwardAgent yes
   IdentityFile /Users/fred/.ssh/hosts/key-solaris
 
+Host union
+  User root
+  ForwardAgent yes
+  IdentityFile /Users/fred/.ssh/hosts/key-solaris
+
 Host n8n.systems.capitalfactory.com
   User ubuntu
   ForwardAgent yes
