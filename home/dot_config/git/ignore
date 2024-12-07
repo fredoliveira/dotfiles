@@ -7,3 +7,4 @@ rerun.txt
 tmp/**/*
 !tmp/cache/.keep
 .ruby-version
+.claudesync

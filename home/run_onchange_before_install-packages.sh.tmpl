@@ -26,6 +26,7 @@ brew install mise
 brew install zoxide
 brew install uv
 brew install ruff
+brew install restic
 
 # Syncthing
 brew install syncthing
@@ -36,6 +37,7 @@ brew services restart syncthing
 brew install firefox
 brew install iterm2
 brew install visual-studio-code
+brew install cursor
 brew install 1password
 brew install 1password-cli
 brew install alfred
@@ -71,7 +73,6 @@ brew install font-roboto
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 # Mise setup
-mise settings set python_compile 1 # Because I use poetry. Probably unnecessary once I drop poetry for uv
 mise install
 
 # Neovim setup
