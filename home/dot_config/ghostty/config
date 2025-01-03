@@ -6,6 +6,7 @@ theme = Jellybeans
 
 font-size = 12
 font-family = JetBrainsMono NFM Regular
+adjust-cell-height = 10%
 
 # Window setup
 
