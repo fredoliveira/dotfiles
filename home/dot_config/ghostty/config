@@ -1,29 +1,29 @@
-window-padding-x = 5
-window-padding-y = 5
-window-padding-balance = true
-theme = Framer
-background = #111111
-foreground = #777777
-selection-background = #666666
-selection-foreground = #ffffff
-cursor-color = #fcdc08
-palette = 0=#141414
-palette = 1=#ff5555
-palette = 2=#98ec65
-palette = 3=#ffcc33
-palette = 4=#00aaff
-palette = 5=#aa88ff
-palette = 6=#88ddff
-palette = 7=#cccccc
-palette = 8=#414141
-palette = 9=#ff8888
-palette = 10=#b6f292
-palette = 11=#ffd966
-palette = 12=#33bbff
-palette = 13=#cebbff
-palette = 14=#bbecff
-palette = 15=#ffffff
+# Theme
+
+theme = Jellybeans
+
+# Font config
+
 font-size = 12
 font-family = JetBrainsMono NFM Regular
+
+# Window setup
+
 macos-titlebar-style = tabs
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+
+# Behavior
+
+window-save-state = never
+
+# Keybinds
+
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>x=close_surface
+keybind = cmd+s>n=new_window
+
+keybind = cmd+j=jump_to_prompt:1
+keybind = cmd+k=jump_to_prompt:-1
 
