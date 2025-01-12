@@ -15,16 +15,21 @@ window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
 
+# Icon setup
+
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = D75C5C
+macos-icon-screen-color = 111111
+
 # Behavior
 
 window-save-state = never
+focus-follows-mouse = true
+auto-update = download
 
 # Keybinds
 
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
 keybind = cmd+s>n=new_window
-
-keybind = cmd+j=jump_to_prompt:1
-keybind = cmd+k=jump_to_prompt:-1
-
