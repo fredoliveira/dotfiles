@@ -11,8 +11,8 @@
   cp = cherry-pick
   dlc = diff --cached HEAD^
   review = log -p --reverse -M -C -C --patience --no-prefix
-  l = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-  ll = log --graph --branches --remotes --tags --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+  l = log --oneline
+  ll = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
   rip = !git reset --hard HEAD && git clean -d -f
 [apply]
   whitespace = nowarn
