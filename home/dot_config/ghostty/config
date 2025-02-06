@@ -4,8 +4,8 @@ theme = Jellybeans
 
 # Font config
 
-font-size = 12
-font-family = JetBrainsMono NFM Regular
+font-size = 13
+font-family = ZedMono NFM
 adjust-cell-height = 10%
 
 # Window setup
