@@ -8,7 +8,7 @@ fi
 # Setup some extra paths (node, python, custom scripts)
 export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$PATH"
 
-# Assuming we have Code anywhere, but this should probably just be vim
+# Use vim as the default editor
 export EDITOR="vim"
 
 # Have a consistent TERM variable
