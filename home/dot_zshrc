@@ -23,6 +23,7 @@ alias la="eza -la --icons"
 alias c="code"
 alias cm="chezmoi"
 alias buu="brew update && brew upgrade"
+alias muu="mise upgrade"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias lg="lazygit"
 
