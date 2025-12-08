@@ -33,3 +33,4 @@ auto-update = download
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
 keybind = cmd+s>n=new_window
+keybind = shift+enter=text:\n

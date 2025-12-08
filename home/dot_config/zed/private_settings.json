@@ -9,6 +9,7 @@
   "buffer_line_height": { "custom": 1.6 },
   "tabs": {
     "close_position": "left",
+    "always_show_close_button": true,
     "file_icons": true,
     "git_status": true,
     "activate_on_close": "neighbour"
