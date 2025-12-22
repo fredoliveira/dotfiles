@@ -22,6 +22,7 @@ brew install yt-dlp
 brew install mise
 brew install zoxide
 brew install gh
+brew install neovim
 
 # Syncthing
 brew install syncthing
@@ -31,40 +32,16 @@ brew services restart syncthing
 {{ if .casks -}}
 brew install firefox
 brew install ghostty
-# brew install visual-studio-code
-# brew install cursor
-# brew install zed
 brew install 1password
-brew install 1password-cli
-brew install alfred
 brew install spotify
-# brew install telegram
-# brew install transmit
 brew install fantastical
 brew install mimestream
 brew install obsidian
 brew install discord
-brew install rectangle-pro
-brew install keyboardcleantool
-# brew install slack
-# brew install devonthink
-# brew install appcleaner
-# brew install hiddenbar
-# brew install linearmouse
-# brew install keyboard-maestro
 {{ end -}}
 
 # Install fonts
-# brew install font-inter
-# brew install font-jetbrains-mono-nerd-font
-# brew install font-ia-writer-duo
-# brew install font-ia-writer-duospace
-# brew install font-ia-writer-mono
-# brew install font-ia-writer-quattro
-# brew install font-zed-mono-nerd-font
-# brew install font-zed-sans
-# brew install font-roboto
-# brew install font-caskaydia-cove-nerd-font
+brew install font-iosevka-nerd-font-mono
 
 # Antidote for zsh
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
@@ -72,18 +49,11 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 # Mise setup
 mise install
 
-# Neovim setup
-brew install neovim
-
 # Mac App Store apps
 brew install mas
 mas install 1435957248    # Drafts
 mas install 1475387142    # Tailscale
 mas install 1542143627    # Omnifocus
-# mas install 1289197285  # Mindnode
-# mas install 497799835   # Xcode
-# mas install 1451685025  # Wireguard
-# mas install 409183694   # Keynote
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
