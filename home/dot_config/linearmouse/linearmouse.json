@@ -1,61 +1,76 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
   "schemes" : [
     {
-      "pointer" : {
-        "disableAcceleration" : false,
-        "speed" : 0.22,
-        "acceleration" : 0
-      },
       "if" : {
         "device" : {
+          "category" : "mouse",
           "productID" : "0xc547",
           "productName" : "USB Receiver",
-          "category" : "mouse",
           "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 0,
+        "disableAcceleration" : false,
+        "speed" : 0.22
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
         }
       }
     },
     {
       "if" : {
         "device" : {
-          "serialNumber" : "66128F3E",
           "category" : "mouse",
-          "productName" : "PRO X Wireless",
           "productID" : "0xc094",
+          "productName" : "PRO X Wireless",
+          "serialNumber" : "66128F3E",
           "vendorID" : "0x46d"
         }
       },
       "pointer" : {
-        "speed" : 0.22,
-        "acceleration" : 0
+        "acceleration" : 0,
+        "speed" : 0.22
       }
     },
     {
-      "pointer" : {
-        "disableAcceleration" : true
-      },
       "if" : {
         "device" : {
-          "serialNumber" : "B80CA88CCFD46CDE",
-          "vendorID" : "0x46d",
+          "category" : "mouse",
           "productID" : "0xb017",
           "productName" : "MX Master",
-          "category" : "mouse"
+          "serialNumber" : "B80CA88CCFD46CDE",
+          "vendorID" : "0x46d"
         }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
       }
     },
     {
       "buttons" : {
         "mappings" : [
           {
-            "option" : false,
             "action" : "appExpose",
+            "button" : 5,
             "command" : false,
             "control" : false,
-            "shift" : false,
-            "button" : 5
+            "option" : false,
+            "shift" : false
           }
         ]
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb034",
+          "productName" : "MX Master 3S",
+          "serialNumber" : "B40B43A7",
+          "vendorID" : "0x46d"
+        }
       },
       "pointer" : {
         "disableAcceleration" : true
@@ -64,37 +79,47 @@
         "reverse" : {
           "vertical" : true
         }
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xb034",
-          "productName" : "MX Master 3S",
-          "vendorID" : "0x46d",
-          "serialNumber" : "B40B43A7"
-        }
       }
     },
     {
-      "pointer" : {
-        "speed" : 0.0689655172413792768,
-        "disableAcceleration" : true,
-        "acceleration" : 0.6875
+      "buttons" : {
+        "mappings" : [
+          {
+            "action" : "appExpose",
+            "button" : 5,
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : "missionControl",
+            "button" : 6,
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          }
+        ]
       },
       "if" : {
         "device" : {
-          "vendorID" : "0x46d",
           "category" : "mouse",
           "productID" : "0xc548",
-          "productName" : "USB Receiver"
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d"
         }
       },
-      "buttons" : {
-        "mappings" : [
-
-        ]
+      "pointer" : {
+        "acceleration" : 0.6875,
+        "disableAcceleration" : true,
+        "speed" : 0.0689655172413792768
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5"
+  ]
 }

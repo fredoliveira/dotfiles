@@ -8,7 +8,6 @@ ForwardAgent yes
 Host solaris
 User root
 ForwardAgent yes
-IdentityFile /Users/fred/.ssh/hosts/key-solaris
 
 # Servers
 

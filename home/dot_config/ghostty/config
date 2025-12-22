@@ -4,15 +4,15 @@ theme = Jellybeans
 
 # Font config
 
-font-size = 13
-font-family = ZedMono NFM
-adjust-cell-height = 10%
+font-size = 12
+font-family = Iosevka Nerd Font Mono
+adjust-cell-height = 15%
 
 # Window setup
 
 macos-titlebar-style = tabs
-window-padding-x = 8
-window-padding-y = 8
+window-padding-x = 12
+window-padding-y = 6
 window-padding-balance = true
 
 # Icon setup
@@ -27,6 +27,7 @@ macos-icon-screen-color = 111111
 window-save-state = never
 focus-follows-mouse = true
 auto-update = download
+auto-update-channel = tip
 
 # Keybinds
 

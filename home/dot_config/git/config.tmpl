@@ -3,13 +3,10 @@
   excludesfile = ~/.gitignore
 [alias]
   st = status
-  di = diff
   co = checkout
   ci = commit
   br = branch
-  sta = stash
   cp = cherry-pick
-  dlc = diff --cached HEAD^
   review = log -p --reverse -M -C -C --patience --no-prefix
   l = log --oneline
   ll = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
@@ -56,9 +53,3 @@
 	defaultBranch = main
 [rebase]
   autostash = true
-[gpg]
-  format = ssh
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-[commit]
-  gpgsign = true
