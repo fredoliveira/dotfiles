@@ -27,7 +27,7 @@ macos-icon-screen-color = 111111
 window-save-state = never
 focus-follows-mouse = true
 auto-update = download
-auto-update-channel = tip
+auto-update-channel = stable
 
 # Keybinds
 
