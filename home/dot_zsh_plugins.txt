@@ -1,12 +1,4 @@
-wfxr/forgit
-
-robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/git-flow
-robbyrussell/oh-my-zsh path:plugins/dotenv
-
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
-
-romkatv/powerlevel10k
