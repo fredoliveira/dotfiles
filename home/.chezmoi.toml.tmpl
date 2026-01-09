@@ -1,4 +1,5 @@
 {{- $install_casks := promptBoolOnce . "casks" "casks" -}}
+{{- $is_desktop := promptBoolOnce . "desktop" "desktop" -}}
 
 [data]
   email = "fred@helloform.com"
@@ -6,3 +7,4 @@
   onepasswordAccount = "LJ65XUOQ6VE5PFSTMCUCXSVGYY"
   cfonepasswordAccount = "BEPGXQBVXND5NGNZHD2YJMA6B4"
   casks = {{ $install_casks }}
+  desktop = {{ $is_desktop }}
