@@ -16,5 +16,5 @@ case, go all out and look below for instructions.
 ### Installation process
 
 ```
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply fredoliveira
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply fredoliveira
 ```
