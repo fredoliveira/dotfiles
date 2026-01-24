@@ -43,15 +43,16 @@ brew install \
   discord \
   alfred \
   1password \
-  1password-cli
+  1password-cli \
+  rectangle-pro \
+  claude
 {{ end -}}
 
 # Desktop-specific packages (brew, casks, fonts, mas apps)
 {{ if .desktop -}}
 brew install \
   linearmouse \
-  betterdisplay \
-  rectangle-pro
+  betterdisplay
 {{ end -}}
 
 # Install fonts
@@ -75,3 +76,10 @@ mas install 1542143627    # Omnifocus
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
+
+# Atuin setup
+atuin login
+atuin sync
+
+# Claude code setup
+curl -fsSL https://claude.ai/install.sh | bash

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "This script will:"
+echo "  - Remove all icons from the dock"
+echo "  - Hide recent apps in the dock"
+echo ""
+printf "Do you want to proceed? [y/N] "
+read -r response
+
+if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
+    # Remove all icons from the dock
+    defaults write com.apple.dock persistent-apps -array
+
+    # Hide recent apps in the dock
+    defaults write com.apple.dock show-recents -bool false
+
+    # Kill the dock so that it refreshes
+    killall Dock
+
+    echo "Dock configuration updated."
+else
+    echo "Skipped dock configuration."
+fi
