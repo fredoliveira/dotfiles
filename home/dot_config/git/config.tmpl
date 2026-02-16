@@ -11,6 +11,8 @@
   l = log --oneline
   ll = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
   rip = !git reset --hard HEAD && git clean -d -f
+  next-version = "!f() { latest=$(git tag --sort=-v:refname | head -1); echo \"Latest: $latest\"; IFS=. read -r major minor patch <<< \"$latest\"; echo \"Next patch: $major.$minor.$((patch+1))\"; echo \"Next minor: $major.$((minor+1)).0\"; }; f"
+  nv = next-version
 [apply]
   whitespace = nowarn
 [color]
@@ -24,7 +26,7 @@
 [user]
   name = {{ .name }}
   email = {{ .email }}
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGHOncfJWwsXugVSekXQTWouJ8kGkPmfsO92KE2UbGTF
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGHOncfJWwsXugVSekXQTWouJ8kGkPmfsO92KE2UbGTF
 [push]
   default = simple
 [filter "media"]
@@ -53,3 +55,9 @@
 	defaultBranch = main
 [rebase]
   autostash = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

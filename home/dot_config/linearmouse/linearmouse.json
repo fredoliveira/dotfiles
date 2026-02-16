@@ -111,7 +111,7 @@
         }
       },
       "pointer" : {
-        "acceleration" : 0.6875,
+        "acceleration" : 0.75,
         "disableAcceleration" : true,
         "speed" : 0.0689655172413792768
       },
