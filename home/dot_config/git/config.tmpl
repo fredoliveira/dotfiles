@@ -8,8 +8,9 @@
   br = branch
   cp = cherry-pick
   review = log -p --reverse -M -C -C --patience --no-prefix
-  l = log --oneline
-  ll = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	l = log --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %s %C(dim)(%cr)%C(reset)'
+	ll = log --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(dim)%ad%C(reset) %s' --date=short
+	lg = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %s %C(dim)(%cr)%C(reset)'
   rip = !git reset --hard HEAD && git clean -d -f
   next-version = "!f() { latest=$(git tag --sort=-v:refname | head -1); echo \"Latest: $latest\"; IFS=. read -r major minor patch <<< \"$latest\"; echo \"Next patch: $major.$minor.$((patch+1))\"; echo \"Next minor: $major.$((minor+1)).0\"; }; f"
   nv = next-version
