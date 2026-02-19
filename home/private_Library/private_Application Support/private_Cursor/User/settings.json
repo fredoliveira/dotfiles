@@ -2,5 +2,6 @@
     "window.commandCenter": true,
     "editor.fontFamily": "Iosevka Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "git.confirmSync": false
 }
