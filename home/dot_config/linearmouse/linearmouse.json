@@ -85,14 +85,6 @@
       "buttons" : {
         "mappings" : [
           {
-            "action" : "appExpose",
-            "button" : 5,
-            "command" : false,
-            "control" : false,
-            "option" : false,
-            "shift" : false
-          },
-          {
             "action" : "missionControl",
             "button" : 6,
             "command" : false,
