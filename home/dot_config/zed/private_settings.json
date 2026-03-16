@@ -7,18 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
   "agent_servers": {
     "codex-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "icon_theme": "Catppuccin Mocha",
   "buffer_font_family": "Iosevka Nerd Font Propo",
   "ui_font_family": ".ZedSans",
   "ui_font_size": 14.0,
   "buffer_font_size": 13.0,
-  "theme": "Zedokai (Filter Spectrum)",
+  "theme": "Zedokai Darker (Filter Spectrum)",
 }
