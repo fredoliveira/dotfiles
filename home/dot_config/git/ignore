@@ -7,3 +7,5 @@ rerun.txt
 tmp/**/*
 !tmp/cache/.keep
 .ruby-version
+
+**/.claude/settings.local.json

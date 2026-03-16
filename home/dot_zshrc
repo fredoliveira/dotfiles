@@ -15,6 +15,9 @@ alias buu="brew update && brew upgrade"
 alias muu="mise upgrade"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+# Claude
+alias warclaude="claude --allow-dangerously-skip-permissions"
+
 # History configuration
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
