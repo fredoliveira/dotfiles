@@ -1,0 +1,7 @@
+{{ if .is_snyk -}}
+.config/mise/config.toml
+.config/atuin/config.toml
+.config/1Password/ssh/agent.toml
+.ssh/hosts/config-hosts
+Documents/sync
+{{ end -}}
