@@ -16,7 +16,7 @@ alias muu="mise upgrade"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Claude
-alias cc="claude --allow-dangerously-skip-permissions"
+alias ccc="claude --allow-dangerously-skip-permissions"
 
 # History configuration
 HISTFILE=~/.zsh_history
