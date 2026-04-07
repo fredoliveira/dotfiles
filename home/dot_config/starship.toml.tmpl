@@ -15,8 +15,13 @@ $character"""
 # Hostname
 [hostname]
 ssh_only = false
+{{ if .is_snyk -}}
+format = "[@snyk]($style) "
+style = "bold purple"
+{{ else -}}
 format = "[@$hostname]($style) "
 style = "bold green"
+{{ end -}}
 
 # Directory
 [directory]
