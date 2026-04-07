@@ -7,7 +7,7 @@ if [ -z "$(which brew)" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Install packages
+# Shared CLI packages
 brew install \
   zsh \
   tmux \
@@ -24,34 +24,45 @@ brew install \
   zoxide \
   gh \
   neovim \
-  atuin \
   starship \
-  forgit \
+  forgit
+
+{{ if not .is_snyk -}}
+# Extras on personal devices
+brew install \
+  atuin \
+  libyaml \
   syncthing
 
+# Restart syncthing
 brew services restart syncthing
+{{ end -}}
 
 # Install casks
-{{ if .casks -}}
+{{ if .install_casks -}}
+brew install \
+  ghostty \
+  1password \
+  1password-cli \
+  rectangle-pro \
+  cursor
+
+{{ if not .is_snyk -}}
+# Personal-only casks
 brew install \
   firefox \
-  ghostty \
   spotify \
   fantastical \
   mimestream \
   obsidian \
   discord \
   alfred \
-  1password \
-  1password-cli \
-  rectangle-pro \
-  claude \
-  cursor \
   keyboard-maestro
+{{ end -}}
 {{ end -}}
 
 # Desktop-specific packages (brew, casks, fonts, mas apps)
-{{ if .desktop -}}
+{{ if .is_desktop -}}
 brew install \
   linearmouse \
   betterdisplay
@@ -67,22 +78,25 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Mise setup
-brew install libyaml # Ruby dependency
 mise install
 
-# Mac App Store apps
+# Mac App Store apps (personal devices only)
+{{ if not .is_snyk -}}
 brew install mas
 mas install 1435957248    # Drafts
 mas install 1475387142    # Tailscale
 mas install 1542143627    # Omnifocus
 mas install 1136220934    # Infuse
+{{ end -}}
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
 
+{{ if not .is_snyk -}}
 # Atuin setup
 atuin login
 atuin sync
+{{ end -}}
 
 # Claude code setup
 curl -fsSL https://claude.ai/install.sh | bash

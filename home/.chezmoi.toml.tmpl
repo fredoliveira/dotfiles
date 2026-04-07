@@ -1,10 +1,10 @@
-{{- $install_casks := promptBoolOnce . "casks" "casks" -}}
-{{- $is_desktop := promptBoolOnce . "desktop" "desktop" -}}
+{{- $install_casks := promptBoolOnce . "install_casks" "install casks" -}}
+{{- $is_desktop := promptBoolOnce . "is_desktop" "desktop machine" -}}
+{{- $is_snyk := promptBoolOnce . "is_snyk" "snyk work machine" -}}
 
 [data]
-  email = "fred@helloform.com"
   name = "Fred Oliveira"
-  onepasswordAccount = "LJ65XUOQ6VE5PFSTMCUCXSVGYY"
-  cfonepasswordAccount = "BEPGXQBVXND5NGNZHD2YJMA6B4"
-  casks = {{ $install_casks }}
-  desktop = {{ $is_desktop }}
+  email = {{ if $is_snyk }}"fred.oliveira@snyk.io"{{ else }}"fred@helloform.com"{{ end }}
+  is_snyk = {{ $is_snyk }}
+  install_casks = {{ $install_casks }}
+  is_desktop = {{ $is_desktop }}

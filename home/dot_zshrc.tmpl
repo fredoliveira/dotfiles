@@ -13,7 +13,10 @@ alias c="code"
 alias cm="chezmoi"
 alias buu="brew update && brew upgrade"
 alias muu="mise upgrade"
+
+{{ if not .is_snyk -}}
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+{{ end -}}
 
 # Claude
 alias ccc="claude --allow-dangerously-skip-permissions"
@@ -80,8 +83,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #     builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
 # fi
 
+{{ if not .is_snyk -}}
 # atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+{{ end -}}
 
 # starship
 eval "$(starship init zsh)"
