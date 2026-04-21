@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# Ensure Xcode Command Line Tools are installed (required by Homebrew)
-if ! xcode-select -p >/dev/null 2>&1; then
-  xcode-select --install
-  echo "Xcode Command Line Tools installing — re-run 'chezmoi apply' once it finishes."
-  exit 1
-fi
-
 # Install homebrew if it doesn't exist yet
 if [ -z "$(which brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
