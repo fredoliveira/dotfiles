@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Ensure Xcode Command Line Tools are installed (required by Homebrew)
+if ! xcode-select -p >/dev/null 2>&1; then
+  xcode-select --install
+  echo "Xcode Command Line Tools installing — re-run 'chezmoi apply' once it finishes."
+  exit 1
+fi
+
 # Install homebrew if it doesn't exist yet
 if [ -z "$(which brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -15,6 +22,9 @@ brew install \
   ripgrep \
   fd \
   eza \
+  bat \
+  jq \
+  git-delta \
   wget \
   btop \
   git \
@@ -72,10 +82,7 @@ brew install \
 brew install font-iosevka-nerd-font font-iosevka-term-nerd-font
 
 # Antidote for zsh
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-
-# Install TPM for tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+[ -d "${ZDOTDIR:-$HOME}/.antidote" ] || git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-$HOME}/.antidote"
 
 # Mise setup
 mise install
@@ -99,4 +106,17 @@ atuin sync
 {{ end -}}
 
 # Claude code setup
-curl -fsSL https://claude.ai/install.sh | bash
+command -v claude >/dev/null 2>&1 || curl -fsSL https://claude.ai/install.sh | bash
+
+echo ""
+echo "============================================"
+echo " Next steps:"
+echo "============================================"
+echo "  - Sign in to 1Password (desktop app)"
+echo "  - Enable 1Password SSH agent in app settings"
+echo "  - Run: gh auth login"
+echo "  - Run: claude /login"
+echo "  - Run: atuin login && atuin sync"
+echo "  - Set up Syncthing pairing if needed"
+echo "  - Restart terminal for PATH changes to take effect"
+echo "============================================"

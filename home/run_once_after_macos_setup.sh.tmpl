@@ -1,5 +1,26 @@
 #!/bin/sh
 
+# Keyboard: fast key repeat + enable repeat on hold
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Trackpad: tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Finder: default to list view, search current folder
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Screenshots: save to ~/Documents/sync/screenshots
+mkdir -p "$HOME/Documents/sync/screenshots"
+defaults write com.apple.screencapture location -string "$HOME/Documents/sync/screenshots"
+
+killall Finder SystemUIServer 2>/dev/null
+
 echo "This script will:"
 echo "  - Remove all icons from the dock"
 echo "  - Hide recent apps in the dock"

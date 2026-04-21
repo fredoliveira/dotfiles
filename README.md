@@ -7,11 +7,15 @@ case, go all out and look below for instructions.
 
 ### What's included
 
-- Vim setup
-- Git configuration
-- Tmux configuration + TPM
-- Zsh shell setup (with `starship` and `antidote`)
-- A couple of terminal fonts
+- Zsh setup (antidote, starship, atuin, zoxide, fzf)
+- Git config + global ignore
+- Tmux config + TPM
+- Ghostty terminal
+- Neovim (empty; drops in as you build it up)
+- Mise-managed toolchains
+- macOS defaults bootstrap
+- 1Password SSH agent + signing
+- Brew packages auto-installed on `chezmoi apply`
 
 ### Installation process
 

@@ -1,6 +1,13 @@
 [core]
-  editor = vim
-  excludesfile = ~/.gitignore
+  editor = nvim
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  light = false
+[merge]
+  conflictstyle = zdiff3
 [alias]
   st = status
   co = checkout
