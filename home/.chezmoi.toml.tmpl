@@ -1,6 +1,10 @@
 {{- $install_casks := promptBoolOnce . "install_casks" "install casks" -}}
 {{- $is_desktop := promptBoolOnce . "is_desktop" "desktop machine" -}}
 {{- $is_snyk := promptBoolOnce . "is_snyk" "snyk work machine" -}}
+{{- $hostname := "" -}}
+{{- if not $is_snyk -}}
+{{-   $hostname = promptStringOnce . "hostname" "hostname for this machine" -}}
+{{- end -}}
 
 [data]
   name = "Fred Oliveira"
@@ -8,3 +12,4 @@
   is_snyk = {{ $is_snyk }}
   install_casks = {{ $install_casks }}
   is_desktop = {{ $is_desktop }}
+  hostname = "{{ $hostname }}"

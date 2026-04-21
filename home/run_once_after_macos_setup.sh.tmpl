@@ -1,5 +1,17 @@
 #!/bin/sh
 
+{{ if not .is_snyk -}}
+# Hostname
+HOSTNAME_TARGET="{{ .hostname }}"
+if [ -n "$HOSTNAME_TARGET" ] && [ "$(scutil --get ComputerName 2>/dev/null)" != "$HOSTNAME_TARGET" ]; then
+  sudo scutil --set HostName "$HOSTNAME_TARGET"
+  sudo scutil --set LocalHostName "$HOSTNAME_TARGET"
+  sudo scutil --set ComputerName "$HOSTNAME_TARGET"
+  dscacheutil -flushcache
+  echo "Hostname set to $HOSTNAME_TARGET."
+fi
+{{ end -}}
+
 # Keyboard: fast key repeat + enable repeat on hold
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain KeyRepeat -int 2
