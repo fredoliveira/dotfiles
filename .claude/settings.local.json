@@ -3,7 +3,8 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(find:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(git *)"
     ]
   }
 }

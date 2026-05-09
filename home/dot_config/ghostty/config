@@ -4,8 +4,8 @@ theme = Jellybeans
 
 # Font config
 
-font-size = 11
-#font-family = IosevkaTerm Nerd Font Mono
+font-size = 13
+font-family = Iosevka Nerd Font Mono
 adjust-cell-height = 15%
 
 # Window setup
