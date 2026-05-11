@@ -3,11 +3,11 @@
 # Global npm packages installed via bun.
 # Depends on bun being available (installed via mise in run_onchange_before_install-packages.sh.tmpl).
 
-if ! command -v bun >/dev/null 2>&1; then
-  echo "bun not found; skipping global npm package installation"
+if ! command -v mise >/dev/null 2>&1; then
+  echo "mise not found; skipping global npm package installation"
   exit 0
 fi
 
-bun add -g \
+mise exec -- bun add -g \
   hunkdiff \
   @earendil-works/pi-coding-agent
