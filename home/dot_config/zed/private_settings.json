@@ -90,20 +90,27 @@
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
+    "metrics": false
   },
   "agent_servers": {
     "codex-acp": {
-      "type": "registry",
+      "type": "registry"
     },
     "claude-acp": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
+  },
+  "auto_install_extensions": {
+    "astro": true,
+    "catpuccin-icons": true,
+    "color-highlight": true,
+    "html": true,
+    "zedokai": true
   },
   "icon_theme": "Catppuccin Mocha",
   "buffer_font_family": "Iosevka Nerd Font Propo",
   "ui_font_family": ".ZedSans",
   "ui_font_size": 14.0,
   "buffer_font_size": 13.0,
-  "theme": "Zedokai Darker (Filter Spectrum)",
+  "theme": "Zedokai Darker (Filter Spectrum)"
 }
