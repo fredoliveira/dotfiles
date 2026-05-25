@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Speed up Homebrew: skip per-invocation auto-update and download in parallel
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
+
 # Install homebrew if it doesn't exist yet
 if [ -z "$(which brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -17,24 +22,20 @@ brew install \
   eza \
   bat \
   jq \
-  git-delta \
   wget \
   btop \
   git \
   git-flow \
-  yt-dlp \
   mise \
   zoxide \
   gh \
   neovim \
-  starship \
-  forgit
+  starship
 
 {{ if not .is_snyk -}}
 # Extras on personal devices
 brew install \
   atuin \
-  libyaml \
   syncthing
 
 # Restart syncthing
@@ -48,7 +49,6 @@ brew install \
   1password \
   1password-cli \
   rectangle-pro \
-  cursor \
   zed
 
 {{ if not .is_snyk -}}
@@ -93,12 +93,6 @@ mas install 1136220934    # Infuse
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
-
-{{ if not .is_snyk -}}
-# Atuin setup
-atuin login
-atuin sync
-{{ end -}}
 
 # Claude code setup
 command -v claude >/dev/null 2>&1 || curl -fsSL https://claude.ai/install.sh | bash
