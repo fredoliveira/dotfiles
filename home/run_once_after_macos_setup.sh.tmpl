@@ -22,6 +22,9 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Appearance: glass diffusion
+defaults write NSGlobalDomain NSGlassDiffusionSetting -int 1
+
 # Trackpad: tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
@@ -36,6 +39,10 @@ defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 2
 # Finder: default to list view, search current folder
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "1"
+
+# Tahoe BS
+defaults write NSGlobalDomain AppleReduceDesktopTinting -bool true
 
 # Screenshots: save to ~/Documents/sync/screenshots
 mkdir -p "$HOME/Documents/sync/screenshots"
