@@ -1,13 +1,5 @@
 [core]
   editor = nvim
-  pager = delta
-[interactive]
-  diffFilter = delta --color-only
-[delta]
-  navigate = true
-  light = false
-[merge]
-  conflictstyle = zdiff3
 [alias]
   st = status
   co = checkout
@@ -21,6 +13,8 @@
   rip = !git reset --hard HEAD && git clean -d -f
   next-version = "!f() { latest=$(git tag --sort=-v:refname | head -1); echo \"Latest: $latest\"; IFS=. read -r major minor patch <<< \"$latest\"; echo \"Next patch: $major.$minor.$((patch+1))\"; echo \"Next minor: $major.$((minor+1)).0\"; }; f"
   nv = next-version
+	hdiff = -c core.pager=\"hunk pager\" diff
+	hshow = -c core.pager=\"hunk pager\" show
 [apply]
   whitespace = nowarn
 [color]
