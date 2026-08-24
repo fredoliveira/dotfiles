@@ -27,3 +27,7 @@ IdentityFile ~/.ssh/hosts/key-cfn8n
 Host docker.systems.capitalfactory.com
 User ubuntu
 ForwardAgent yes
+
+Host calendar.systems.capitalfactory.com
+User ubuntu
+ForwardAgent yes

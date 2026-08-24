@@ -1,0 +1,14 @@
+{{ if not .is_snyk -}}
+#!/bin/sh
+# Global npm packages installed via bun (bun itself is installed by mise in
+# run_onchange_after_install-mise-packages.sh.tmpl, which sorts before this).
+
+set -eu
+
+# During first bootstrap /opt/homebrew/bin isn't on PATH yet
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+mise exec -- bun add -g \
+  hunkdiff \
+  @earendil-works/pi-coding-agent
+{{ end -}}

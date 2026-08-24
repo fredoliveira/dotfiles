@@ -55,7 +55,7 @@
     "entry_spacing": "comfortable",
     "hide_gitignore": false,
     "button": true,
-    "dock": "left"
+    "dock": "right"
   },
   "outline_panel": {
     "button": true,
@@ -67,7 +67,7 @@
   "agent": {
     "show_turn_stats": true,
     "sidebar_side": "right",
-    "dock": "right",
+    "dock": "left",
     "favorite_models": [],
     "model_parameters": []
   },

@@ -1,0 +1,12 @@
+{{ if .reset_dock -}}
+#!/bin/sh
+# Dock: remove all pinned apps and hide recent apps.
+# Gated on the reset_dock prompt answered at `chezmoi init` time, so the
+# bootstrap stays non-interactive.
+
+set -eu
+
+defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock show-recents -bool false
+killall Dock
+{{ end -}}

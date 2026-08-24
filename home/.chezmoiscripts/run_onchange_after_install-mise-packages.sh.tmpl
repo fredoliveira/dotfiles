@@ -1,0 +1,17 @@
+{{ if not .is_snyk -}}
+#!/bin/sh
+# Install mise-managed toolchains. Runs as an "after" script so that
+# ~/.config/mise/config.toml exists by the time it runs (before-scripts run
+# before chezmoi writes any files, so `mise install` there is a no-op on a
+# fresh machine).
+#
+# Re-run when the mise config changes:
+# mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+set -eu
+
+# During first bootstrap /opt/homebrew/bin isn't on PATH yet
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+mise install --yes
+{{ end -}}

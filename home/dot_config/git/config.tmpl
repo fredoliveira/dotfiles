@@ -28,14 +28,12 @@
 [user]
   name = {{ .name }}
   email = {{ .email }}
+{{ if .install_casks -}}
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGHOncfJWwsXugVSekXQTWouJ8kGkPmfsO92KE2UbGTF
+{{ end -}}
 [push]
   default = simple
   autoSetupRemote = true
-[filter "media"]
-  required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
 [diff]
   compactionHeuristic = true
 [filter "lfs"]
@@ -58,9 +56,12 @@
 	defaultBranch = main
 [rebase]
   autostash = true
+{{ if .install_casks -}}
+# Commit signing via 1Password; only on machines where the app is installed
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+{{ end -}}

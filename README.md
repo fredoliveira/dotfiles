@@ -9,7 +9,7 @@ case, go all out and look below for instructions.
 
 - Zsh setup (antidote, starship, atuin, zoxide, fzf)
 - Git config + global ignore
-- Tmux config + TPM
+- Tmux config
 - Ghostty terminal
 - Neovim (empty; drops in as you build it up)
 - Mise-managed toolchains
