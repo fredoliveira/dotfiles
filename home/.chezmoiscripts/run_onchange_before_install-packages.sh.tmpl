@@ -97,9 +97,9 @@ brew install --cask font-iosevka-nerd-font font-iosevka-term-nerd-font
 # Mac App Store apps (personal devices only; requires being signed in to the App Store)
 {{ if not .is_snyk -}}
 brew install mas
-mas install 1435957248 || echo "mas: Drafts install failed (signed in to the App Store?)"
-mas install 1475387142 || echo "mas: Tailscale install failed (signed in to the App Store?)"
-mas install 1136220934 || echo "mas: Infuse install failed (signed in to the App Store?)"
+mas install 1435957248 # Drafts
+mas install 1475387142 # Tailscale
+mas install 1136220934 # Infuse
 {{ end -}}
 
 # Claude code setup

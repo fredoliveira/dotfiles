@@ -1,7 +1,7 @@
 [tools]
-ruby = "3"
-python = "3.13"
-pnpm = "10"
+ruby = "4"
+python = "3"
+pnpm = "11"
 rust = "1"
 uv = "0"
 node = "24"

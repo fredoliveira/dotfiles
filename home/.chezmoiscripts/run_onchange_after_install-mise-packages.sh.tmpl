@@ -1,9 +1,7 @@
 {{ if not .is_snyk -}}
 #!/bin/sh
 # Install mise-managed toolchains. Runs as an "after" script so that
-# ~/.config/mise/config.toml exists by the time it runs (before-scripts run
-# before chezmoi writes any files, so `mise install` there is a no-op on a
-# fresh machine).
+# ~/.config/mise/config.toml exists by the time it runs.
 #
 # Re-run when the mise config changes:
 # mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
