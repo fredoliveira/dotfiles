@@ -22,3 +22,14 @@ case, go all out and look below for instructions.
 ```
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply fredoliveira
 ```
+
+### Backups
+
+`backup [label]` archives `~/code`, `~/Downloads` and the Obsidian vaults
+to the NAS as `.tar.zst` files, skipping dependency folders. To restore one
+to its original place (overwrites existing files):
+
+```
+tar -xf code.tar.zst -C ~                 # same for downloads.tar.zst
+tar -xf obsidian.tar.zst -C ~/Documents
+```

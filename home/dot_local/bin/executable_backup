@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+# Back up code, Downloads and the Obsidian vaults to the NAS as .tar.zst
+# archives (one big stream per source is far faster over SMB than copying
+# thousands of small files).
+#
+# Usage: backup [label]
+#   Writes to $DEST_ROOT/<yyyy-mon>-<label>/, e.g. 2026-sep-mbp-m5.
+#   label defaults to this machine's hostname.
+#
+# Restore: tar -xf <archive>.tar.zst -C <dir>
+
+set -euo pipefail
+
+DEST_ROOT=/Volumes/backups-fred/backups
+LABEL=${1:-$(scutil --get LocalHostName)}
+DEST="$DEST_ROOT/$(date +%Y-%b | tr '[:upper:]' '[:lower:]')-$LABEL"
+
+# Dependency, build and cache folders (matched at any depth)
+EXCLUDES=(
+  node_modules .venv venv __pycache__ .next .turbo dist build target
+  .gradle Pods DerivedData .cache .pytest_cache .mypy_cache .ruff_cache
+  coverage .DS_Store
+)
+
+# archive name | parent dir | folder to archive | extra excludes (space separated)
+SOURCES=(
+  "code|$HOME|code|"
+  "downloads|$HOME|Downloads|"
+  "obsidian|$HOME/Documents|obsidian|obsidian/backups"
+)
+
+command -v zstd >/dev/null || { echo "zstd not found (brew install zstd)" >&2; exit 1; }
+[ -d "$DEST_ROOT" ] || { echo "$DEST_ROOT not mounted, connect to the NAS first" >&2; exit 1; }
+mkdir -p "$DEST"
+echo "Backing up to $DEST"
+
+for entry in "${SOURCES[@]}"; do
+  IFS='|' read -r name parent dir extra <<<"$entry"
+  out="$DEST/$name.tar.zst"
+  args=()
+  for e in "${EXCLUDES[@]}" $extra; do args+=(--exclude "$e"); done
+
+  printf '%-10s ' "$name"
+  start=$SECONDS
+  # Write to a temp name and only replace an existing archive once verified
+  tar -C "$parent" -cf - "${args[@]}" "$dir" | zstd -q -T0 -3 -o "$out.new"
+  files=$(zstd -dc "$out.new" | tar -tf - | grep -vc '/$')
+  mv -f "$out.new" "$out"
+  echo "$(du -h "$out" | cut -f1 | tr -d ' ')  $files files  $((SECONDS - start))s"
+done
+
+echo "Done."
