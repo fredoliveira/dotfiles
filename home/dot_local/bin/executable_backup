@@ -50,4 +50,9 @@ for entry in "${SOURCES[@]}"; do
   echo "$(du -h "$out" | cut -f1 | tr -d ' ')  $files files  $((SECONDS - start))s"
 done
 
+# Record the last successful run for the reminder in .zshrc
+STATE="${XDG_STATE_HOME:-$HOME/.local/state}/backup"
+mkdir -p "$STATE"
+echo "$LABEL" > "$STATE/last"
+
 echo "Done."

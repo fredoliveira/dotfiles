@@ -26,7 +26,8 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply fredoliveira
 ### Backups
 
 `backup [label]` archives `~/code`, `~/Downloads` and the Obsidian vaults
-to the NAS as `.tar.zst` files, skipping dependency folders. To restore one
+to the NAS as `.tar.zst` files, skipping dependency folders. New shells warn
+when the last backup is more than 30 days old. To restore one
 to its original place (overwrites existing files):
 
 ```

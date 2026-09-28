@@ -99,3 +99,16 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 # starship
 eval "$(starship init zsh)"
+
+{{ if not .is_snyk -}}
+# Backup reminder: warn when `backup` hasn't run in 30+ days
+_backup_last=${XDG_STATE_HOME:-$HOME/.local/state}/backup/last
+if [[ ! -f $_backup_last ]]; then
+  print -P "%F{yellow}⚠ No backup recorded on this machine. Run: backup <label>%f"
+fi
+for _backup_last in $_backup_last(N.md+30); do
+  zmodload -F zsh/stat b:zstat; zmodload zsh/datetime
+  print -P "%F{yellow}⚠ Last backup was $(( (EPOCHSECONDS - $(zstat +mtime $_backup_last)) / 86400 )) days ago. Run: backup $(<$_backup_last)%f"
+done
+unset _backup_last
+{{ end -}}
