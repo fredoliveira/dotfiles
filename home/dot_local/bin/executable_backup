@@ -1,20 +1,21 @@
 #!/bin/bash
 #
-# Back up code, Downloads and the Obsidian vaults to the NAS as .tar.zst
-# archives (one big stream per source is far faster over SMB than copying
-# thousands of small files).
+# Back up folders to the NAS as .tar.zst archives (one big stream per folder
+# is far faster over SMB than copying thousands of small files).
 #
-# Usage: backup [label]
-#   Writes to $DEST_ROOT/<yyyy-mon>-<label>/, e.g. 2026-sep-mbp-m5.
-#   label defaults to this machine's hostname.
+# Usage: backup [-x pattern]... <label> <folder>...
+#   Writes each folder to $DEST_ROOT/<yyyy-mon>-<label>/<name>.tar.zst,
+#   named after the folder in lowercase, e.g. 2026-sep-mbp-m5/code.tar.zst.
+#   -x adds an exclude pattern on top of the dependency folders below,
+#   e.g. -x obsidian/backups.
 #
-# Restore: tar -xf <archive>.tar.zst -C <dir>
+# Restore: tar -xf <name>.tar.zst -C <folder's original parent>
 
 set -euo pipefail
 
 DEST_ROOT=/Volumes/backups-fred/backups
-LABEL=${1:-$(scutil --get LocalHostName)}
-DEST="$DEST_ROOT/$(date +%Y-%b | tr '[:upper:]' '[:lower:]')-$LABEL"
+
+usage() { echo "usage: backup [-x pattern]... <label> <folder>..." >&2; exit 1; }
 
 # Dependency, build and cache folders (matched at any depth)
 EXCLUDES=(
@@ -23,23 +24,41 @@ EXCLUDES=(
   coverage .DS_Store
 )
 
-# archive name | parent dir | folder to archive | extra excludes (space separated)
-SOURCES=(
-  "code|$HOME|code|"
-  "downloads|$HOME|Downloads|"
-  "obsidian|$HOME/Documents|obsidian|obsidian/backups"
-)
+while getopts "x:" opt; do
+  case $opt in
+    x) EXCLUDES+=("$OPTARG") ;;
+    *) usage ;;
+  esac
+done
+shift $((OPTIND - 1))
+[ $# -ge 2 ] || usage
+
+LABEL=$1; shift
+DEST="$DEST_ROOT/$(date +%Y-%b | tr '[:upper:]' '[:lower:]')-$LABEL"
+
+# Resolve folders up front so a typo fails before anything is written
+SOURCES=()
+names=" "
+for f in "$@"; do
+  [ -d "$f" ] || { echo "not a folder: $f" >&2; exit 1; }
+  path=$(cd "$f" && pwd)
+  name=$(basename "$path" | tr '[:upper:]' '[:lower:]')
+  case $names in *" $name "*) echo "two folders would both be $name.tar.zst" >&2; exit 1 ;; esac
+  names+="$name "
+  SOURCES+=("$name|$(dirname "$path")|$(basename "$path")")
+done
 
 command -v zstd >/dev/null || { echo "zstd not found (brew install zstd)" >&2; exit 1; }
 [ -d "$DEST_ROOT" ] || { echo "$DEST_ROOT not mounted, connect to the NAS first" >&2; exit 1; }
 mkdir -p "$DEST"
 echo "Backing up to $DEST"
 
+args=()
+for e in "${EXCLUDES[@]}"; do args+=(--exclude "$e"); done
+
 for entry in "${SOURCES[@]}"; do
-  IFS='|' read -r name parent dir extra <<<"$entry"
+  IFS='|' read -r name parent dir <<<"$entry"
   out="$DEST/$name.tar.zst"
-  args=()
-  for e in "${EXCLUDES[@]}" $extra; do args+=(--exclude "$e"); done
 
   printf '%-10s ' "$name"
   start=$SECONDS
@@ -49,10 +68,5 @@ for entry in "${SOURCES[@]}"; do
   mv -f "$out.new" "$out"
   echo "$(du -h "$out" | cut -f1 | tr -d ' ')  $files files  $((SECONDS - start))s"
 done
-
-# Record the last successful run for the reminder in .zshrc
-STATE="${XDG_STATE_HOME:-$HOME/.local/state}/backup"
-mkdir -p "$STATE"
-echo "$LABEL" > "$STATE/last"
 
 echo "Done."
