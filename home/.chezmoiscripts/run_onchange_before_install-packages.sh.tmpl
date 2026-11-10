@@ -17,18 +17,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Shared CLI packages
 brew install \
   zsh \
-  tmux \
   fzf \
   ripgrep \
   fd \
   eza \
-  bat \
   jq \
   zstd \
   wget \
   btop \
   git \
-  git-flow \
   git-lfs \
   forgit \
   mise \
@@ -56,7 +53,6 @@ brew services list | grep -qE "^syncthing\s+started" || brew services start sync
 # Install casks
 {{ if .install_casks -}}
 brew install --cask \
-  ghostty \
   1password \
   1password-cli \
   rectangle-pro \
@@ -74,11 +70,9 @@ brew install --cask \
   discord \
   alfred \
   keyboard-maestro \
-  todoist-app \
   whatsapp \
   vlc \
-  appcleaner \
-  handy
+  appcleaner
 {{ end -}}
 {{ end -}}
 
